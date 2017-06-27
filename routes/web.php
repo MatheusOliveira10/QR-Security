@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/admin', 'AdminController@index');
+Route::resource('qr', 'QRController');
+Route::resource('alunos', 'AlunoController');
+Route::resource('datas', 'DataController');

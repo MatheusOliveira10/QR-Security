@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Filtros agrupados</title>
+    <style type="text/css">
+	    *{
+	        font-family:Verdana;
+	    }
+	    #tab{
+	        width:100%;
+	        border:solid 1px;
+	        text-align: left;
+	        border-collapse:collapse;
+	        border-color:#C1CDCD;
+	    }
+	    #tab tr{
+	        height:30px;
+	    }
+	    #tab thead tr{
+	        background: #A2B5CD;
+	    }
+	    #tab tr td:first-child, #tab tr td:last-child{
+	        width:150px;
+	    }
+	    #tab tbody tr:nth-child(odd){
+	        background: #C1CDCD
+	    }
+	    .filtroColuna{
+	        width:100%;
+	        border:solid 1px;
+	    }
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+</head>
+<body>
+    <table id="tab">
+	    <thead>
+	        <tr>
+	            <th>Código</th>
+	            <th>Descrição</th>
+	            <th>Grupo</th>
+	        </tr>
+	    </thead>     
+	    <tbody>
+	        <tr>
+	            <td>001</td>
+	            <td>Feijão</td>
+	            <td>Cereais</td>
+	        </tr>
+	        <tr>
+	            <td>002</td>
+	            <td>Arroz</td>
+	            <td>Cereais</td>
+	        </tr>
+	        <tr>
+	            <td>003</td>
+	            <td>Milho</td>
+	            <td>Cereais</td>
+	        </tr>
+	        <tr>
+	            <td>044</td>
+	            <td>Sabão em pó</td>
+	            <td>Limpeza</td>
+	        </tr>
+	        <tr>
+	            <td>055</td>
+	            <td>Detergente</td>
+	            <td>Limpeza</td>
+	        </tr>
+	        <tr>
+	            <td>078</td>
+	            <td>Pão</td>
+	            <td>Padaria</td>
+	        </tr>
+	        <tr>
+	            <td>089</td>
+	            <td>Bolo</td>
+	            <td>Padaria</td>
+	        </tr>
+	    </tbody>
+	    <tfoot>
+	    </tfoot>
+	</table>
+	<script>
+	function AdicionarFiltro(tabela, coluna) {
+	    var cols = $("#" + tabela + " thead tr:first-child th").length;
+	    if ($("#" + tabela + " thead tr").length == 1) {
+	        var linhaFiltro = "<tr>";
+	        for (var i = 0; i < cols; i++) {
+	            linhaFiltro += "<th></th>";
+	        }
+	        linhaFiltro += "</tr>";
+	 
+	        $("#" + tabela + " thead").append(linhaFiltro);
+	    }
+	 
+	    var colFiltrar = $("#" + tabela + " thead tr:nth-child(2) th:nth-child(" + coluna + ")");
+	 
+	    $(colFiltrar).html("<select id='filtroColuna_" + coluna.toString() + "'  class='filtroColuna'> </select>");
+	 
+	    var valores = new Array();
+	 
+	    $("#" + tabela + " tbody tr").each(function () {
+	        var txt = $(this).children("td:nth-child(" + coluna + ")").text();
+	        if (valores.indexOf(txt) < 0) {
+	            valores.push(txt);
+	        }
+	    });
+	    $("#filtroColuna_" + coluna.toString()).append("<option>TODOS</option>")
+	    for (elemento in valores) {
+	        $("#filtroColuna_" + coluna.toString()).append("<option>" + valores[elemento] + "</option>");
+	    }
+	 
+	    $("#filtroColuna_" + coluna.toString()).change(function () {
+	        var filtro = $(this).val();
+	        $("#" + tabela + " tbody tr").show();
+	        if (filtro != "TODOS") {
+	            $("#" + tabela + " tbody tr").each(function () {
+	                var txt = $(this).children("td:nth-child(" + coluna + ")").text();
+	                if (txt != filtro) {
+	                    $(this).hide();
+	                }
+	            });
+	        }
+	    });
+	 
+	};
+	AdicionarFiltro("tab", 3);
+	</script>
+</body>
+</html>

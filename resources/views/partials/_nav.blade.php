@@ -18,6 +18,7 @@
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
         <li class="{{ Request::is('qr') ? "active" : "" }}"><a href="/qr">Checar Entrada</a></li>
         <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Alunos</a></li>
+        <li class="{{ Request::is('dias') ? "active" : "" }}"><a href="/dias">Dias Letivos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
@@ -27,6 +28,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ route('qr.index') }}">Checar Entrada</a></li>
             <li><a href="{{ route('alunos.index') }}">Alunos</a></li>
+            <li><a href="{{ route('dias.index') }}">Dias Letivos</a></li>
             <li role="separator" class="divider"></li>
             <li>
             <a href="{{ route('logout') }}"

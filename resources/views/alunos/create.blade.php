@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| Trabalho Matheus e Maxwell')
+@section('title', '| QR Security')
 
 @section('content')
     
@@ -13,9 +13,10 @@
         <hr>
         </div>
         <div class="col-md-6">
-            <form action="{{route('qr.store')}}" id="qr" method="POST">
+            <form action="{{route('alunos.update')}}" id="qr" method="POST">
             {{csrf_field()}}
-                <input type="hidden" id="rm" name="rm" value="" />
+                <input type="number" id="id" name="id" value="" />
+                <button type="submit" class="btn">Dar Presença</button>
             </form>
         </div>
     </div>
@@ -30,6 +31,7 @@
             */
             document.querySelector('select').addEventListener('change', function(){
             	decoder.stop().play();
+                decoder.getOptimalZoom();
             });
 
             var txt = "innerText" in HTMLElement.prototype ? "innerText" : "textContent";

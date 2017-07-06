@@ -1,22 +1,18 @@
 @extends('main')
 
-@section('title', '| Listagem de Alunos')
+@section('title', '| Dias Letivos')
 
 @section('content')
         <div class="col-md-6">
-            <h2>Listagem de Alunos:</h2>
+            <h2>Dias Letivos:</h2>
             <table id="alunos" class="table">
                 <thead>
-                    <th>RM</th>
-                    <th>Aluno(a)</th>
-                    <th>Sala</th>
+                    <th>Dias:</th>
                 </thead>
                 <tbody>
-                    @foreach($alunos as $aluno)
+                    @foreach($dias as $dia)
                     <tr>
-                        <td>{{$aluno->id}}</td>
-                        <td>{{$aluno->nome}}</td>
-                        <td>{{$aluno->sala_id}}</td>
+                        <td>{{ date('j/M/Y', strtotime($dia->aula)) }}</td>
                     </tr>    
                     @endforeach
                 </tbody>

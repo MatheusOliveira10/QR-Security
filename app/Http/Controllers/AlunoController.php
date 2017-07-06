@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Sala;
 use App\Aluno;
-use App\Data;
+use App\Dia;
+use Session;
+use Carbon\Carbon;
 
 class AlunoController extends Controller
 {
@@ -28,7 +30,7 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alunos.create');
     }
 
     /**
@@ -37,9 +39,14 @@ class AlunoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
-        //
+        $aluno = Aluno::find($id);
+        $aluno->dias()->sync($request->id, false);
+        Session::flash('success', 'Aluno entrou com sucesso!');
+
+        return redirect('alunos.show', $aluno->id);
+
     }
 
     /**
@@ -51,7 +58,7 @@ class AlunoController extends Controller
     public function show($id)
     {
         $aluno = Aluno::find($id);
-        return view('alunos.show')->withAluno($aluno);
+        return view('alunos.show', compact('aluno'));
     }
 
     /**
@@ -62,7 +69,14 @@ class AlunoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aluno = Aluno::find($id);
+        $dias = Dia::all();
+        $dias2 = array();
+        foreach ($dias as $dia) {
+            $dias2[$dia->id] = $dia->aula;
+        }
+
+        return view('alunos.edit')->withAluno($aluno)->withDias($dias2);
     }
 
     /**
@@ -74,7 +88,25 @@ class AlunoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+                 // Validate the data
+        $aluno = Aluno::find($id);
+        
+        // Save the data to the database
+        $aluno->nome = $request->nome;
+        $aluno->sala_id = $request->sala_id;
+        $aluno->save();   
+        
+        if (isset($request->dias)) {
+            $aluno->dias()->sync($request->dias);
+        } else {
+            $aluno->dias()->sync(array());
+        }
+             
+        // set flash data with success message
+        Session::flash('success', 'O aluno entrou com sucesso!');
+        // redirect with flash data to posts.show
+        return redirect()->route('alunos.show', $aluno->id);
+
     }
 
     /**

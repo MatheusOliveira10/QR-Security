@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlunosTable extends Migration
+class CreateAlunoDiaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateAlunosTable extends Migration
      */
     public function up()
     {
-        Schema::create('alunos', function (Blueprint $table) {
+        Schema::create('aluno_dia', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('sala_id');
-            $table->timestamps();
+            $table->integer('aluno_id')->unsigned();
+            $table->foreign('aluno_id')->references('id')->on('alunos');
+
+            $table->integer('dia_id')->unsigned();
+            $table->foreign('dia_id')->references('id')->on('dias');
+
         });
+
     }
 
     /**
@@ -28,6 +32,6 @@ class CreateAlunosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alunos');
+        Schema::drop('aluno_dia');
     }
 }

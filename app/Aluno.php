@@ -10,4 +10,9 @@ class Aluno extends Model
     {
         return $this->belongsTo('App\Sala');
     }
+
+    public function dias()
+    {
+        return $this->belongsToMany('App\Dia');
+    }
 }

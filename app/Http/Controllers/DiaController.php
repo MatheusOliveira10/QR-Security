@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\QR;
-use App\Aluno;
 use Illuminate\Http\Request;
+use App\Dia;
+use App\Aluno;
+use Session;
 
-class QRController extends Controller
+class DiaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +20,9 @@ class QRController extends Controller
      */
     public function index()
     {
-        $aluno = Aluno::all();
-        return view('QR.index', compact('aluno'));
+        $dias = Dia::all();
+
+        return view('dias.index')->withDias($dias);
     }
 
     /**
@@ -37,25 +43,21 @@ class QRController extends Controller
      */
     public function store(Request $request)
     {
-        $qr = new QR();
+        $dia = new Dia;
+        $dia->aula = $request->aula;
+        $dia->save();
 
-        $qr->rm = $request->rm;
-
-        $qr->save();
-
-        $qr->alunos()->sync($request->rm, false);
-        Session::flash('success', 'Aluno entrou com sucesso!');
-
-        return redirect('qr.index');
+        Session::flash('success', "Um novo dia de aula foi criado");
+        return redirect()->route('dias.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\QR  $qR
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(QR $qR)
+    public function show($id)
     {
         //
     }
@@ -63,10 +65,10 @@ class QRController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\QR  $qR
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(QR $qR)
+    public function edit($id)
     {
         //
     }
@@ -75,10 +77,10 @@ class QRController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\QR  $qR
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, QR $qR)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -86,10 +88,10 @@ class QRController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\QR  $qR
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QR $qR)
+    public function destroy($id)
     {
         //
     }

@@ -13,18 +13,16 @@
         <hr>
         </div>
         <div class="col-md-6">
-                {!! Form::model($aluno, ['route' => ['alunos.update', $aluno->id], 'method' => 'PUT']) !!}
+                {!! Form::model($aluno, ['route' => ['alunos.update', $aluno->id], 'method' => 'PUT', 'id' => 'qr']) !!}
 	            	<div class="col-md-8">
-			           {{ Form::label('nome', 'Nome:') }}
-			           {{ Form::text('nome', null, ["class" => 'form-control input-lg']) }}
+			           {{ Form::hidden('nome', null, ["class" => 'form-control input-lg']) }}
 
-			            {{ Form::label('Dias', 'Dias:', ['class' => 'form-spacing-top']) }}
-			            {{ Form::select('dias[]', $dias, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
+			            {{ Form::label('Dias', 'Dia de Hoje:', ['class' => 'form-spacing-top']) }}
+			            {{ Form::select('dias', $dias, null, ['class' => 'form-control']) }}
 			
-			            {{ Form::label('sala_id', "Sala:", ['class' => 'form-spacing-top']) }}
-                        {{ Form::text('sala_id', null, ['class' => 'form-control']) }}               
+                        {{ Form::hidden('sala_id', null, ['class' => 'form-control']) }}               
                         
-            {{ Form::submit('Salvar Modificações', ['class' => 'btn btn-success btn-block']) }}
+            {{ Form::submit('Dar Presença', ['class' => 'btn btn-success btn-block']) }}
         	{!! Form::close() !!}
         </div>
     </div>
@@ -37,8 +35,6 @@
 
 	<script type="text/javascript">
 		$('.select2-multi').select2();
-		$('.select2-multi').select2().val({!! json_encode($aluno->dias()->allRelatedIds())
-			!!}).trigger('change');
 	</script>
         <script>
             var decoder = new WebCodeCamJS("canvas").buildSelectMenu('select', 'environment|back').init(arg).play();
@@ -54,7 +50,7 @@
             var arg = {
                 cameraSuccess: function(stream) {           
                     var rm = result.code;
-                    var objetoDados = document.getElementById("rm");
+                    var objetoDados = {{json_encode($aluno->id)}};
 			        objetoDados.value = rm;
                     document.getElementById("qr").submit();
         },

@@ -28,7 +28,7 @@ class AlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         return view('alunos.create');
     }
@@ -96,11 +96,7 @@ class AlunoController extends Controller
         $aluno->sala_id = $request->sala_id;
         $aluno->save();   
         
-        if (isset($request->dias)) {
-            $aluno->dias()->sync($request->dias);
-        } else {
-            $aluno->dias()->sync(array());
-        }
+        $aluno->dias()->attach($request->dias);
              
         // set flash data with success message
         Session::flash('success', 'O aluno entrou com sucesso!');

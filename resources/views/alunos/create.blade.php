@@ -13,7 +13,7 @@
         <hr>
         </div>
         <div class="col-md-6">
-            <form action="{{route('alunos.update')}}" id="qr" method="POST">
+            <form action="{{route('alunos.update', $aluno->id)}}" id="qr" method="POST">
             {{csrf_field()}}
                 <input type="number" id="id" name="id" value="" />
                 <button type="submit" class="btn">Dar Presença</button>

@@ -86,22 +86,17 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
                  // Validate the data
-        $aluno = Aluno::find($id);
-        
-        // Save the data to the database
-        $aluno->nome = $request->nome;
-        $aluno->sala_id = $request->sala_id;
-        $aluno->save();   
-        
+        $aluno = Aluno::find($request->aluno);
+                     
         $aluno->dias()->attach($request->dias);
              
         // set flash data with success message
         Session::flash('success', 'O aluno entrou com sucesso!');
         // redirect with flash data to posts.show
-        return redirect()->route('alunos.show', $aluno->id);
+       return redirect ('alunos.chamada')->withAluno($aluno);
 
     }
 
@@ -114,5 +109,32 @@ class AlunoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function presenca(Request $request)
+    {
+        $aluno = Aluno::find($request->aluno);
+        $dias = Dia::all();
+        $dias2 = array();
+        foreach ($dias as $dia) {
+            $dias2[$dia->id] = $dia->aula;
+        }
+ 
+       $aluno->dias()->attach($request->dias);
+
+       Session::flash('success', 'O aluno entrou com sucesso!');
+
+       return redirect ('alunos.chamada')->withAluno($aluno)->withDias($dias2);
+    }
+
+    public function chamada(Request $request)
+    {
+        $dias = Dia::all();
+        $dias2 = array();
+        foreach ($dias as $dia) {
+            $dias2[$dia->id] = $dia->aula;
+        }
+ 
+       return view ('alunos.chamada')->withDias($dias2);
     }
 }

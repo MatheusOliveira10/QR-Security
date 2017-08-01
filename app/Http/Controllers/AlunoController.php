@@ -127,7 +127,7 @@ class AlunoController extends Controller
        return redirect ('alunos.chamada')->withAluno($aluno)->withDias($dias2);
     }
 
-    public function chamada(Request $request)
+    public function chamadapagina(Request $request)
     {
         $dias = Dia::all();
         $dias2 = array();
@@ -136,5 +136,17 @@ class AlunoController extends Controller
         }
  
        return view ('alunos.chamada')->withDias($dias2);
+    }
+
+    public function chamada(Request $request)
+    {
+        $aluno = Aluno::find($request->aluno);
+                     
+        $aluno->dias()->attach($request->dias);
+             
+        // set flash data with success message
+        Session::flash('success', 'O aluno entrou com sucesso!');
+        // redirect with flash data to posts.show
+       return redirect()->route('alunos.chamada', $aluno->id);
     }
 }

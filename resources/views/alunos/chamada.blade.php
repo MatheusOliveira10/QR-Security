@@ -13,7 +13,7 @@
         <hr>
         </div>
         <div class="col-md-6">
-                {!! Form::model(['route' => ['alunos.update'], 'method' => 'PUT', 'id' => 'qr']) !!}
+                {!! Form::model(['route' => ['alunos.chamada'], 'method' => 'POST', 'id' => 'qr']) !!}
 	            	<div class="col-md-8">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="put">

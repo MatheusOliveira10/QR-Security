@@ -18,7 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/chamada', 'AlunoController@chamada')->name('alunos.chamada');
+Route::get('/alunos/chamada', 'AlunoController@chamadapagina')->name('alunos.chamadapagina');
+Route::put('/alunos/{id}', ['uses' => 'AlunoController@chamada', 'as' =>'alunos.chamada']);
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');

@@ -1,6 +1,6 @@
 <h1> TCC QR Security </h1>
 
-<strong> Objetivo Principal: </strong> <br />
+<strong> Objetivo Principal da Sprint: </strong> <br />
 Acertar a entrada de alunos no sistema
 
 <strong> Objetivos Intrínsecos: </strong> <br />
@@ -9,4 +9,5 @@ Acertar a entrada de alunos no sistema
 <li>Adicionar o plugin WebCodeCamJS, (Matheus e Maxwell) </li>
 <li>Autenticação (Matheus) </li>
 <li>Montar a página HTML e Bootstrap (Lucas Manera, Caio e Wilgner)</li>
+<li> "Gerenciamento" (Guilherme) </li>
 </ul>

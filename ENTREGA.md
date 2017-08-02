@@ -9,5 +9,6 @@ Acertar a entrada de alunos no sistema
 <li>Adicionar o plugin WebCodeCamJS, (Matheus e Maxwell) </li>
 <li>Autenticação (Matheus) </li>
 <li>Montar a página HTML e Bootstrap (Lucas Manera, Caio e Wilgner)</li>
-<li> "Gerenciamento" (Guilherme) </li>
+<li>"Gerenciamento" (Guilherme) </li>
+<li>Tradução, Menus e NavBars (Lucas Sartorelli)</li>
 </ul>

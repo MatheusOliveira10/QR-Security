@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\QR;
 use App\Aluno;
+use App\Dia;
+
 use Illuminate\Http\Request;
 
 class QRController extends Controller
@@ -16,7 +18,8 @@ class QRController extends Controller
     public function index()
     {
         $aluno = Aluno::all();
-        return view('QR.index', compact('aluno'));
+        $dias = Dia::all();
+        return view('QR.index', compact('aluno', 'dias'));
     }
 
     /**

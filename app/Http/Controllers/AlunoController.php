@@ -147,6 +147,6 @@ class AlunoController extends Controller
         // set flash data with success message
         Session::flash('success', 'O aluno entrou com sucesso!');
         // redirect with flash data to posts.show
-       return redirect()->route('alunos.chamada', $aluno->id);
+       return redirect()->route('alunos.chamadapagina');
     }
 }

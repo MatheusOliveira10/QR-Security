@@ -16,6 +16,10 @@
             <form action="{{route('qr.store')}}" id="qr" method="POST">
             {{csrf_field()}}
                 <input type="hidden" id="rm" name="rm" value="" />
+
+                <input type="hidden" name="aluno" id="aluno">
+
+
             </form>
         </div>
     </div>

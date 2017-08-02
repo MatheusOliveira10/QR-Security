@@ -1,3 +1,3 @@
       <hr>
 
-      <p class="text-center">Copyright Matheus Oliveira e Maxwell Arruda - Todos os direitos reservados</p>
+      <p class="text-center">Copyright QR Security - Todos os direitos reservados</p>

@@ -2,6 +2,7 @@
 
 <strong> Objetivo Principal da Sprint: </strong> <br />
 Acertar a entrada de alunos no sistema
+Fazer a dashboard do admin
 
 <strong> Objetivos Intrínsecos: </strong> <br />
 <ul>
@@ -11,4 +12,5 @@ Acertar a entrada de alunos no sistema
 <li>Montar a página HTML e Bootstrap (Lucas Manera, Caio e Wilgner)</li>
 <li>"Gerenciamento" (Guilherme) </li>
 <li>Tradução, Menus e NavBars (Lucas Sartorelli)</li>
+<li>Consulta de Dados do Admin e do Usuário Comum (Matheus, Maxwell e Lucas Sartorelli)</li>
 </ul>

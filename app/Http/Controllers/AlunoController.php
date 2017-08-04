@@ -145,7 +145,7 @@ class AlunoController extends Controller
         $aluno->dias()->attach($request->dias);
              
         // set flash data with success message
-        Session::flash('success', 'O aluno entrou com sucesso!');
+        Session::flash('success', 'O aluno ' .$aluno->nome. ' entrou com sucesso!');
         // redirect with flash data to posts.show
        return redirect()->route('alunos.chamadapagina');
     }

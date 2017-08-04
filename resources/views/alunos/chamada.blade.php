@@ -13,17 +13,16 @@
         
         </div>
         <div class="col-md-6">
-                {!! Form::model(['route' => ['alunos.chamada'], 'method' => 'POST', 'id' => 'chamada']) !!}
-	            	<div class="col-md-8">
+	            <form action="route('alunos.chamada')" method="post" id="chamada" name="chamada">	
+                    <div class="col-md-8">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="put">
 
-                        <input type="hidden" id="aluno" name="aluno" onchange="submitar()" value="">
+                        <input type="hidden" id="aluno" name="aluno" value="">
 
 			            {{ Form::label('Dias', 'Dia de Hoje:', ['class' => 'form-spacing-top']) }}
 			            {{ Form::select('dias', $dias, null, ['class' => 'form-control']) }}
-			 
-        	{!! Form::close() !!}
+                </form>
         </div>
     </div>
     </div>
@@ -34,14 +33,16 @@
     {!! Html::script('js/main.js') !!}
     {!! Html::script('js/filereader.js') !!}
     {!! Html::script('js/select2.min.js') !!}
+    {!! Html::script('js/DecoderWorker.js') !!}
 
          <script type="text/javascript">
         	var txt = "innerText" in HTMLElement.prototype ? "innerText" : "textContent";
             var arg = {
                 resultFunction: function(result) {
                     var rm = result.code;
-                    var objetoDados = document.getElementById("aluno");
+                    var objetoDados = document.getElementById('aluno');
 			        objetoDados.value = rm;
+                    document.getElementById('chamada').submit();
                 }
             };
             var decoder = new WebCodeCamJS("canvas").buildSelectMenu(document.getElementById('camera'), 'environment|back').init(arg).play();

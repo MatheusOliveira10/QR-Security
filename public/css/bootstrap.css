@@ -8,10 +8,12 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+      position: relative;
+    min-height: 100%;
 }
 body {
-  margin: 0;
-}
+ margin: 0 0 60px;
+ }
 article,
 aside,
 details,
@@ -26,6 +28,23 @@ nav,
 section,
 summary {
   display: block;
+}
+.row{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-lg-12{
+position: relative;
+    min-height: 1px;
+ padding-right: 15px;
+  padding-left: 15px;
+}
+.footer {
+  text-align: center;
+    position: absolute;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }
 audio,
 canvas,

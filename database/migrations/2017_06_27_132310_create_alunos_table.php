@@ -17,6 +17,7 @@ class CreateAlunosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('sala_id');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

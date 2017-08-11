@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/alunos/chamada', 'AlunoController@chamadapagina')->name('alunos.chamadapagina');
+Route::get('/alunos/chamada', 'AlunoController@chamadapagina')->name('alunos.chamadapagina')->middleware('auth:admin');
 Route::put('/alunos/{id}', ['uses' => 'AlunoController@chamada', 'as' =>'alunos.chamada']);
 
 Route::prefix('admin')->group(function() {

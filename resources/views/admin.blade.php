@@ -1,17 +1,25 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    @include('partialsadmin._head')
+  </head>
+  
+  <body>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard do Admin</div>
+    @include('partialsadmin._nav')    
 
-                <div class="panel-body">
-                    Você é um administrador meu parssa!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+    <div class="container">
+      @include('partialsadmin._messages')
+
+      @yield('content')
+
+      @include('partialsadmin._footer')
+
+    </div> <!-- end of .container --> 
+
+        @include('partialsadmin._javascript')
+
+        @yield('scripts')
+
+  </body>
+</html>

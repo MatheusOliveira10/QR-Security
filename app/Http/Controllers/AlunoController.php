@@ -39,13 +39,20 @@ class AlunoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id, Request $request)
+    public function store(Request $request)
     {
-        $aluno = Aluno::find($id);
-        $aluno->dias()->sync($request->id, false);
-        Session::flash('success', 'Aluno entrou com sucesso!');
+        $aluno = new Aluno();
 
-        return redirect('alunos.show', $aluno->id);
+        $aluno->id = $request->id;
+        $aluno->nome = $request->nome;
+        $aluno->sala_id = $request->sala_id;
+        $aluno->timestamps();
+
+        $aluno->save();
+        
+        Session::flash('success', 'Aluno cadastrado com sucesso!');
+
+        return redirect()->route('alunos.index');
 
     }
 
@@ -86,18 +93,21 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
                  // Validate the data
-        $aluno = Aluno::find($request->aluno);
+        $aluno = Aluno::find($id);
                      
-        $aluno->dias()->attach($request->dias);
-             
-        // set flash data with success message
-        Session::flash('success', 'O aluno entrou com sucesso!');
-        // redirect with flash data to posts.show
-       return redirect ('alunos.chamada')->withAluno($aluno);
+        $aluno->id = $request->id;
+        $aluno->nome = $request->nome;
+        $aluno->sala_id = $request->sala_id;
+        $aluno->timestamps();
 
+        $aluno->save();
+        
+        Session::flash('success', 'Aluno atualizado com sucesso!');
+
+        return redirect()->route('alunos.index');
     }
 
     /**
@@ -108,24 +118,13 @@ class AlunoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aluno->delete();
+
+        Session::flash('success', 'Aluno deletado com sucesso!');
+
+        return redirect()->route('alunos.index');
     }
 
-    public function presenca(Request $request)
-    {
-        $aluno = Aluno::find($request->aluno);
-        $dias = Dia::all();
-        $dias2 = array();
-        foreach ($dias as $dia) {
-            $dias2[$dia->id] = $dia->aula;
-        }
- 
-       $aluno->dias()->attach($request->dias);
-
-       Session::flash('success', 'O aluno entrou com sucesso!');
-
-       return redirect ('alunos.chamada')->withAluno($aluno)->withDias($dias2);
-    }
 
     public function chamadapagina(Request $request)
     {

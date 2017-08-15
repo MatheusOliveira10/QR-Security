@@ -1182,7 +1182,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #FF8C00;
+  border-top: 1px solid #20B2AA;
 }
 .sr-only {
   position: absolute;
@@ -1355,7 +1355,7 @@ mark,
 }
 .text-center .footer-line{
   text-align: center;
-  color: #FF8C00;
+  color: #20B2AA;
 }
 .text-justify {
   text-align: justify;
@@ -3588,7 +3588,7 @@ tbody.collapse.in {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #ff8c00;
+  background-color: #20B2AA;
 }
 .dropdown-menu > li > a {
   display: block;
@@ -4536,7 +4536,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #2a2b2a;
-  border-bottom-color: #FF8C00;
+  border-bottom-color:#20B2AA;
   border-bottom-width: thick;
   font-family: 'Arvo', Georgia, Times, serif;
 	font-size: 19px;
@@ -4558,17 +4558,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #FF8C00;
+  color: #20B2AA;
   background-color: #2a2b2a;
 }
 .navbar-default .navbar-nav > .active > a{
   color: #fff;
-  background-color: #FF8C00;
+  background-color: #20B2AA;
 }
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #FF9C00;
+  background-color: #48D1CC;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,

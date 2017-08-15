@@ -16,8 +16,8 @@ class Aluno extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function dias()
+    public function frequencia()
     {
-        return $this->belongsToMany('App\Dia');
+        return $this->hasMany('App\Frequencia');
     }
 }

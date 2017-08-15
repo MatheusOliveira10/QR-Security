@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>QR Security @yield('title')</title> <!-- CHANGE THIS TITLE FOR EACH PAGE -->
-<link rel="stylesheet" href='css/jquery.dataTables.min.css'>
+<link rel="stylesheet" href='css/jquery.dataTables.css'>
 <!-- Bootstrap -->
 {{ Html::style('css/styles.css') }}
 {{ Html::style('css/select2.min.css') }}

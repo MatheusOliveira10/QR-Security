@@ -150,7 +150,7 @@ select,
 textarea {
   margin: 0;
   font: inherit;
-  color: inherit;
+  color: #000;
 }
 button {
   overflow: visible;
@@ -2550,6 +2550,7 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #ffffff;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;

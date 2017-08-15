@@ -1120,8 +1120,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #FFF;
+  color: #000;
   background-color: #DCDCDC;
+  font-family: 'Arvo', Georgia, Times, serif;
 }
 input,
 button,
@@ -2314,7 +2315,9 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 3px solid #20B2AA;
+  background-color: #DCDCDC;
+  font-family: Arial, Georgia, Times, serif;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -2327,6 +2330,7 @@ th {
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
   border-top: 0;
+  color: #000;
 }
 .table > tbody + tbody {
   border-top: 2px solid #ddd;
@@ -2550,7 +2554,8 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #ffffff;
+  color: #000;
+  font-family: Arial, Georgia, Times, serif;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;

@@ -1116,13 +1116,22 @@ html {
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+@font-face {
+    font-family: 'Calibri';
+    src: url('fonts/Calibri.eot');
+    src: url('fonts/Calibri.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Calibri.woff') format('woff'),
+        url('fonts/Calibri.ttf') format('truetype'),
+        url('fonts/Calibri.svg#Calibri') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #000;
   background-color: #DCDCDC;
-  font-family: 'Arvo', Georgia, Times, serif;
+  font-family: "Avantgarde";
 }
 input,
 button,
@@ -1183,7 +1192,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #20B2AA;
+  border-top: 1px solid #16857f;
 }
 .sr-only {
   position: absolute;
@@ -1356,7 +1365,7 @@ mark,
 }
 .text-center .footer-line{
   text-align: center;
-  color: #20B2AA;
+  color: #16857f;
 }
 .text-justify {
   text-align: justify;
@@ -2315,7 +2324,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 3px solid #20B2AA;
+  border-top: 3px solid #16857f;
   background-color: #DCDCDC;
   font-family: Arial, Georgia, Times, serif;
 }
@@ -3593,7 +3602,7 @@ tbody.collapse.in {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #20B2AA;
+  background-color: #16857f;
 }
 .dropdown-menu > li > a {
   display: block;
@@ -3608,7 +3617,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #ff9c00;
+  background-color: #48D1CC;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -4321,7 +4330,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #696969;
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 5px 15px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -4541,9 +4550,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #696969;
-  border-bottom-color:#20B2AA;
+  border-bottom-color:#16857f;
   border-bottom-width: thick;
-  font-family: 'Arvo', Georgia, Times, serif;
+  font-family: 'Trebuchet MS', Georgia, Times, serif;
 	font-size: 19px;
 	line-height: 70px;
 }
@@ -4563,12 +4572,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #20B2AA;
+  color: #16857f;
   background-color: #696969;
 }
 .navbar-default .navbar-nav > .active > a{
   color: #fff;
-  background-color: #20B2AA;
+  background-color: #16857f;
 }
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -4599,7 +4608,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #ff8c00;
+  background-color: #16857f;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {

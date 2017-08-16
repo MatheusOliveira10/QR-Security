@@ -30,3 +30,4 @@ Route::prefix('admin')->group(function() {
 Route::resource('qr', 'QRController');
 Route::resource('alunos', 'AlunoController');
 Route::resource('dias', 'DiaController');
+Route::resource('frequencia', 'FrequenciaController');

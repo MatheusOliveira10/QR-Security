@@ -13,15 +13,13 @@
         
         </div>
         <div class="col-md-6">
-	            <form action="route('alunos.chamada')" method="post" id="chamada" name="chamada">	
+	            <form action="route('frequencia.create')" method="post" id="chamada" name="chamada">	
                     <div class="col-md-8">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="put">
 
                         <input type="hidden" id="aluno" name="aluno" value="">
 
-			            {{ Form::label('Dias', 'Dia de Hoje:', ['class' => 'form-spacing-top']) }}
-			            {{ Form::select('dias', $dias, null, ['class' => 'form-control']) }}
                 </form>
         </div>
     </div>

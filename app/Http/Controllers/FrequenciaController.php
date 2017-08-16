@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Frequencia;
+use App\Aluno;
+use Session;
 use Illuminate\Http\Request;
 
 class FrequenciaController extends Controller
@@ -14,7 +16,9 @@ class FrequenciaController extends Controller
      */
     public function index()
     {
-        //
+        $alunos = Aluno::all();
+
+        return view('frequencia.index', compact('alunos'));
     }
 
     /**
@@ -24,7 +28,7 @@ class FrequenciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('alunos.chamada');
     }
 
     /**
@@ -35,7 +39,16 @@ class FrequenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $frequencia = new Frequencia();
+
+        $frequencia->aluno_id = $request->aluno;
+        $frequencia->timestamps();
+        $frequencia->save();
+
+        Success::flash('success', 'O Aluno '. $aluno_id->nome . ' entrou com sucesso!');
+
+        return redirect()->route('frequencia.create');
+
     }
 
     /**
@@ -44,9 +57,12 @@ class FrequenciaController extends Controller
      * @param  \App\Frequencia  $frequencia
      * @return \Illuminate\Http\Response
      */
-    public function show(Frequencia $frequencia)
+    public function show(Frequencia $frequencia, $id)
     {
-        //
+        $aluno = Aluno::find($id);
+        $frequencias = Frequencia::all()->where('aluno_id', '=', $aluno);
+        return view('frequencia.show', compact('aluno', 'frequencias'));
+
     }
 
     /**

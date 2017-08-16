@@ -16,8 +16,10 @@ class CreateAlunosTable extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('sala_id');
-            $table->string('user_id');
+            $table->integer('sala_id')->unsigned()->nullable();
+            $table->foreign('sala_id')->references('id')->on('salas');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

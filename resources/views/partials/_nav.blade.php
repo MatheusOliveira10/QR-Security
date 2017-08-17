@@ -9,7 +9,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+<<<<<<< HEAD
       <a class="navbar-brand" href="#"><img src="../images/logodefinitivoQR.png" alt="logo" width="50" ></img></a>
+=======
+      <a class="navbar-brand" href="#"><img src="../images/logodnv.png" alt="logo" width="100" ></img></a>
+>>>>>>> 10604b48dc2d639348a5b731b2e6834b436737c2
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

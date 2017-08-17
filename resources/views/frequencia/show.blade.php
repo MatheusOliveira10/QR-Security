@@ -16,7 +16,7 @@
             <tbody>
             @foreach ($frequencias as $frequencia)
 				<tr>
-					<td>{{ $frequencia->timestamps->toDateTimeString() }}</td>
+					<td>{{ date('j M, Y h:ia', strtotime($frequencia->created_at)) }}</td>
 				</tr>	
             @endforeach
             </tbody>

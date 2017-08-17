@@ -13,12 +13,11 @@
         
         </div>
         <div class="col-md-6">
-	            <form action="route('frequencia.create')" method="post" id="chamada" name="chamada">	
+	            <form action="{{route('frequencia.store')}}" method="post" id="chamada" name="chamada">	
                     <div class="col-md-8">
                         {{csrf_field()}}
-                        <input type="hidden" name="_method" value="put">
 
-                        <input type="hidden" id="aluno" name="aluno" value="">
+                        <input type="hidden" id="aluno" name="aluno_id" value="">
 
                 </form>
         </div>

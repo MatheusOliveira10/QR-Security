@@ -1160,6 +1160,23 @@ figure {
 img {
   vertical-align: middle;
 }
+.carousel,
+.item,
+.item img{
+width: 1200px;
+height: 600px;
+}
+a.left{
+box-shadow: 0px;
+}
+a.left:hover{
+box-shadow: 0px;
+}
+.carousel-inner {
+height: 100%;
+}
+
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
@@ -1192,7 +1209,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #16857f;
+  border-top: 1px solid #40E0D0;
 }
 .sr-only {
   position: absolute;
@@ -1228,7 +1245,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1365,7 +1382,7 @@ mark,
 }
 .text-center .footer-line{
   text-align: center;
-  color: #16857f;
+  color: #20B2AA;
 }
 .text-justify {
   text-align: justify;
@@ -2324,7 +2341,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 3px solid #16857f;
+  border-top: 3px solid #20B2AA;
   background-color: #DCDCDC;
   font-family: Arial, Georgia, Times, serif;
 }
@@ -3602,7 +3619,7 @@ tbody.collapse.in {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #16857f;
+  background-color:#20B2AA;
 }
 .dropdown-menu > li > a {
   display: block;
@@ -4550,7 +4567,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #696969;
-  border-bottom-color:#16857f;
+  border-bottom-color:#20B2AA;
   border-bottom-width: thick;
   font-family: 'Trebuchet MS', Georgia, Times, serif;
 	font-size: 19px;
@@ -4572,12 +4589,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #16857f;
+  color: #20B2AA;
   background-color: #696969;
 }
 .navbar-default .navbar-nav > .active > a{
   color: #fff;
-  background-color: #16857f;
+  background-color: #20B2AA;
 }
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -4608,7 +4625,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #16857f;
+  background-color: #20B2AA;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {

@@ -9,11 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-<<<<<<< HEAD
-      <a class="navbar-brand" href="/">QR Security</a>
-=======
       <a class="navbar-brand" href="#"><img src="../images/logodnv.png" alt="logo" width="100" ></img></a>
->>>>>>> c34ea0aa06323e78babc87ffbe49b51b929e8996
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

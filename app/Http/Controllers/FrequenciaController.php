@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Frequencia;
+use App\Saida;
 use App\Aluno;
 use Session;
 use Carbon\Carbon;
@@ -60,8 +61,10 @@ class FrequenciaController extends Controller
     public function show(Frequencia $frequencia, $id)
     {
         $events = [];
+        $events2 = [];
         $aluno = Aluno::find($id); 
         $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
+        $saidas = Saida::all()->where('aluno_id', $aluno->id);
         foreach ($frequencias as $frequencia) { 
            $crudFieldValue = $frequencia->getOriginal('created_at'); 
 
@@ -70,7 +73,7 @@ class FrequenciaController extends Controller
            }
 
            $eventLabel     = $frequencia->nome; 
-           $prefix         = $alunos->nome; 
+           $prefix         = $aluno->nome; 
            $suffix         = 'Entrou na escola'; 
            $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
            $events[]       = [ 
@@ -80,9 +83,27 @@ class FrequenciaController extends Controller
            ]; 
         } 
 
+        foreach ($saidas as $saida) { 
+           $crudFieldValue = $saida->getOriginal('created_at'); 
+
+           if (! $crudFieldValue) {
+               continue;
+           }
+
+           $eventLabel     = $saida->nome; 
+           $prefix         = $aluno->nome; 
+           $suffix         = 'Saiu da escola'; 
+           $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
+           $events2[]       = [ 
+                'title' => $dataFieldValue, 
+                'start' => $crudFieldValue, 
+                'url'   => route('saida.edit', $saida->id)
+           ]; 
+        } 
 
 
-        return view('frequencia.show', compact('events'));
+
+        return view('frequencia.show', compact('events', 'aluno', 'events2'));
 
     }
 

@@ -20,4 +20,9 @@ class Aluno extends Model
     {
         return $this->hasMany('App\Frequencia');
     }
+
+    public function saida()
+    {
+        return $this->hasMany('App\Saida');
+    }
 }

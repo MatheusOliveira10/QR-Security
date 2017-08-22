@@ -59,9 +59,30 @@ class FrequenciaController extends Controller
      */
     public function show(Frequencia $frequencia, $id)
     {
-        $aluno = Aluno::find($id);
-        $frequencias = Frequencia::all()->where('aluno_id', '=', $id);
-        return view('frequencia.show', compact('aluno', 'frequencias'));
+        $events = [];
+        $alunos = Aluno::find($id); 
+
+        foreach (Frequencia::all() as $aluno) { 
+           $crudFieldValue = $aluno->getOriginal('created_at'); 
+
+           if (! $crudFieldValue) {
+               continue;
+           }
+
+           $eventLabel     = $aluno->nome; 
+           $prefix         = $alunos->nome; 
+           $suffix         = 'Entrou na escola'; 
+           $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
+           $events[]       = [ 
+                'title' => $dataFieldValue, 
+                'start' => $crudFieldValue, 
+                'url'   => route('frequencia.edit', $aluno->id)
+           ]; 
+        } 
+
+
+
+        return view('frequencia.show', compact('events'));
 
     }
 
@@ -95,6 +116,11 @@ class FrequenciaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Frequencia $frequencia)
+    {
+        //
+    }
+
+    public function calendario(Frequencia $frequencia)
     {
         //
     }

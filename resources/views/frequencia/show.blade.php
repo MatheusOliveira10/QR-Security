@@ -3,30 +3,30 @@
 @section('title', '| Frequência do Aluno')
 
 @section('content')
-    <div class="col-md-6">
-            <h2>Frequência do Aluno:</h2>
-            
-    <table class="table table-striped table-hover">
-            <thead>
-            <tr>
-                <th>{{$aluno->nome}}</th>
-            </tr>
-            </thead>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css'/>
 
-            <tbody>
-            @foreach ($frequencias as $frequencia)
-				<tr>
-					<td>{{ date('j M, Y h:ia', strtotime($frequencia->created_at)) }}</td>
-				</tr>	
-            @endforeach
-            </tbody>
-            </table>
-        </div>
-       
+    <h3 class="page-title">Calendar</h3>
 
-        </div>
-        </div>
-        </div>
-   
-    </div>
+    <div id='calendar'></div>
+
+@endsection
+
+@section('scripts')
+    @parent
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            // page is now ready, initialize the calendar...
+            events={!! json_encode($events)  !!};
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                defaultView: 'listMonth',
+
+                events: events,
+
+
+            })
+        });
+    </script>
 @endsection

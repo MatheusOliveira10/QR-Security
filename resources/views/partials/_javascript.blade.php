@@ -6,6 +6,7 @@
 {!! Html::script('js/main.js') !!}
 {!! Html::script('js/mainjquery.js') !!}
 {!! Html::script('js/DecoderWorker.js') !!}
+{!! Html::script('fullcalendar/fullcalendar.js') !!}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src='js/jquery.dataTables.js'></script>

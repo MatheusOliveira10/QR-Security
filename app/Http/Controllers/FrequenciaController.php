@@ -60,23 +60,23 @@ class FrequenciaController extends Controller
     public function show(Frequencia $frequencia, $id)
     {
         $events = [];
-        $alunos = Aluno::find($id); 
-
-        foreach (Frequencia::all() as $aluno) { 
-           $crudFieldValue = $aluno->getOriginal('created_at'); 
+        $aluno = Aluno::find($id); 
+        $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
+        foreach ($frequencias as $frequencia) { 
+           $crudFieldValue = $frequencia->getOriginal('created_at'); 
 
            if (! $crudFieldValue) {
                continue;
            }
 
-           $eventLabel     = $aluno->nome; 
+           $eventLabel     = $frequencia->nome; 
            $prefix         = $alunos->nome; 
            $suffix         = 'Entrou na escola'; 
            $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
            $events[]       = [ 
                 'title' => $dataFieldValue, 
                 'start' => $crudFieldValue, 
-                'url'   => route('frequencia.edit', $aluno->id)
+                'url'   => route('frequencia.edit', $frequencia->id)
            ]; 
         } 
 

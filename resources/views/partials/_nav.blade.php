@@ -16,8 +16,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
-        <li class="{{ Request::is('frequencia') ? "active" : "" }}"><a href="/frequencia">Frequência do Aluno</a></li>
-        <li class="{{ Request::is('dias') ? "active" : "" }}"><a href="/dias">Dias Letivos</a></li>
+        <li class="{{ Request::is('frequencia') ? "active" : "" }}"><a href="/frequencia/calendar">Frequência do Aluno</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
@@ -26,7 +25,6 @@
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Olá Sr.(a) {{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ route('frequencia.index') }}">Frequência do Aluno</a></li>
-            <li><a href="{{ route('dias.index') }}">Dias Letivos</a></li>
             <li role="separator" class="divider"></li>
             <li>
             <a href="{{ route('logout') }}"

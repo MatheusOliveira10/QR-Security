@@ -42,7 +42,7 @@ var WebCodeCamJS = function(element) {
             decodeQRCodeRate: 5,
             decodeBarCodeRate: 3,
             successTimeout: 500,
-            codeRepetition: false,
+            codeRepetition: true,
             tryVertical: true,
             frameRate: 15,
             width: 320,

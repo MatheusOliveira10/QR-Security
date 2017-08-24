@@ -4,6 +4,7 @@
 {!! Html::script('js/qrcodelib.js') !!}
 {!! Html::script('js/filereader.js') !!}
 {!! Html::script('js/main.js') !!}
+{!! Html::script('js/main2.js') !!}
 {!! Html::script('js/mainjquery.js') !!}
 {!! Html::script('js/DecoderWorker.js') !!}
 {!! Html::script('fullcalendar/fullcalendar.js') !!}

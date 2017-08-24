@@ -3,7 +3,7 @@
 @section('title', '| Trabalho Matheus e Maxwell')
 
 @section('content')
-<div class="w3-content w3-display-container"  style="max-width:1000px">
+<div class="w3-content w3-display-container"  style="max-width:1000px"  >
   <img class="mySlides" src="../images/3d.jpg" style="width:100%">
   <img class="mySlides" src="../images/qr.jpg" style="width:100%">
   <img class="mySlides" src="../images/qrcode.jpg" style="width:100%">
@@ -15,6 +15,7 @@
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
   </div>
 </div>
+
 @endsection
 
 @section('scripts')

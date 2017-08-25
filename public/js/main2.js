@@ -78,6 +78,7 @@ function saveBookmark(e){
 
   // Prevent form from submitting
   e.preventDefault();
+
 }
 
 // Delete bookmark
@@ -116,7 +117,12 @@ function fetchBookmarks(){
                                   ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' +
                                   ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
                                   '</h3>'+
-                                  '</div>';
+                                  '</div>'+
+                                  '<input type="submit" name="submit" class="btn btn-block btn-default">';
+
+                                    var objetoDados = document.getElementById('created_at');
+	objetoDados.value = bookmarks;
+
   }
 }
 

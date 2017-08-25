@@ -13,11 +13,12 @@
         
         </div>
         <div class="col-md-6">
-	            <form action="{{route('frequencia.store')}}" method="post" id="chamada" name="chamada">	
+	            <form action="{{route('saida.store')}}" method="post" id="chamada" name="chamada">	
                     <div class="col-md-8">
                         {{csrf_field()}}
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
+                        <input type="hidden" id="created_at" name="created_at" value="">
 
                 </form>
                 <div id="bookmarksResults"></div>
@@ -44,6 +45,7 @@
 			        objetoDados.value = rm;
 
                     saveBookmark();
+
 
                 }
             };

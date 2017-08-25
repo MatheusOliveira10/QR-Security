@@ -36,8 +36,14 @@ class SaidaController extends Controller
     public function store(Request $request)
     {
         $saida = new Saida();
+        $data = json_decode($request->created_at);
+        dd ($data);
 
-        $saida->aluno_id = $request->aluno_id;
+        foreach ($data as $obj)
+        {
+            'nome' -> $obj->name;
+            'created_at' -> $obj->url;
+        }
         $saida->save();
 
         Session::flash('success', 'O Aluno saiu com sucesso!');

@@ -1,15 +1,44 @@
 // Listen for form submit
-document.getElementById('myForm').addEventListener('submit', saveBookmark);
+document.getElementById('chamada').addEventListener(resultFunction, saveBookmark);
 
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
-  var siteName =document.getElementById('siteName').value;
-  var siteUrl =document.getElementById('siteUrl').value;
-
-  if(!validateForm(siteName, siteUrl)){
-    return false;
+                      var siteUrl = new Date();
+                    var dia = siteUrl.getDate();
+                    var mes = siteUrl.getMonth()+1;
+                    var ano = siteUrl.getFullYear();
+                    var hora = siteUrl.getHours();
+                    var minuto = siteUrl.getMinutes();
+                    var segundo = siteUrl.getSeconds();
+                      if(dia<10)
+  {
+    dia = '0' + dia;
   }
+
+  if(mes<10)
+  {
+    mes = '0' + mes;
+  }
+
+  if(segundo<10)
+  {
+    segundo = '0' + segundo;
+  }
+
+  if(minuto<10)
+  {
+    minuto = '0' + minuto;
+  }
+
+  if(hora<10)
+  {
+    hora = '0' + hora;
+  }
+
+                    siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
+
+  var siteName =document.getElementById('aluno').value;
 
   var bookmark = {
     name: siteName,
@@ -42,7 +71,7 @@ function saveBookmark(e){
   }
 
   // Clear form
-  document.getElementById('myForm').reset();
+  document.getElementById('chamada').reset();
 
   // Re-fetch bookmarks
   fetchBookmarks();
@@ -83,7 +112,7 @@ function fetchBookmarks(){
     var url = bookmarks[i].url;
 
     bookmarksResults.innerHTML += '<div class="well">'+
-                                  '<h3>'+name+
+                                  '<h3>'+url+
                                   ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' +
                                   ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
                                   '</h3>'+

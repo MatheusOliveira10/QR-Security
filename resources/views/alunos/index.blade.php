@@ -16,7 +16,7 @@
                     <tr>
                         <td>{{$aluno->id}}</td>
                         <td>{{$aluno->nome}}</td>
-                        <td>{{$aluno->sala_id}}</td>
+                        <td>{{$aluno->sala->nome}}</td>
                     </tr>    
                     @endforeach
                 </tbody>

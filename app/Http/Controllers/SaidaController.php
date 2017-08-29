@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Saida;
+use App\Aluno;
+use Response;
 use Illuminate\Http\Request;
 
 class SaidaController extends Controller
@@ -95,5 +97,12 @@ class SaidaController extends Controller
     public function destroy(Saida $saida)
     {
         //
+    }
+
+    public function fetch($id)
+    {
+        $aluno = Aluno::find($id);
+
+        return Response::json($aluno);
     }
 }

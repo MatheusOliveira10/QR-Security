@@ -46,7 +46,6 @@
 
                     saveBookmark();
 
-
                 }
             };
             var decoder = new WebCodeCamJS("canvas").buildSelectMenu(document.getElementById('camera'), 'environment|back').init(arg).play();

@@ -22,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/saida/fetch/{id}', 'SaidaController@fetch');
 Route::get('/frequencia/calendar', 'FrequenciaController@calendario')->middleware('auth');
 Route::get('/alunos/chamada', 'AlunoController@chamadapagina')->name('alunos.chamadapagina');
 Route::put('/alunos/{id}', ['uses' => 'AlunoController@chamada', 'as' =>'alunos.chamada']);

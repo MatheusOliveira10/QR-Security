@@ -38,12 +38,22 @@ function saveBookmark(e){
 
                     siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
-  var siteName =document.getElementById('aluno').value;
+  var nome = '';
 
-  var bookmark = {
-    name: siteName,
-    url: siteUrl
-  }
+  var siteName = document.getElementById('aluno').value;
+  var request = $.get('/saida/fetch/' + siteName)
+  var nome = request.done(function(response){
+      
+    
+    console.log(response);
+      nome = response.nome;
+      console.log(nome);
+
+
+    var bookmark = {
+      name: nome,
+      url: siteUrl
+    }  
 
   /*
     // Local Storage Test
@@ -75,9 +85,7 @@ function saveBookmark(e){
 
   // Re-fetch bookmarks
   fetchBookmarks();
-
-  // Prevent form from submitting
-  e.preventDefault();
+  })
 
 }
 
@@ -113,7 +121,7 @@ function fetchBookmarks(){
     var url = bookmarks[i].url;
 
     bookmarksResults.innerHTML += '<div class="well">'+
-                                  '<h3>'+url+
+                                  '<h3>'+name+
                                   ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' +
                                   ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
                                   '</h3>'+

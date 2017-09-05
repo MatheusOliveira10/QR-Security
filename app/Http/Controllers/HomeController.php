@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Session::flash('success', 'Área destinada ao administrador. Faça o login como ADM para continuar.');
         return view('index');
     }
 }

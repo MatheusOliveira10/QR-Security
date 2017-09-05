@@ -38,14 +38,7 @@ class SaidaController extends Controller
     public function store(Request $request)
     {
         $saida = new Saida();
-        $data = json_decode($request->created_at);
-        dd ($data);
 
-        foreach ($data as $obj)
-        {
-            'nome' -> $obj->name;
-            'created_at' -> $obj->url;
-        }
         $saida->save();
 
         Session::flash('success', 'O Aluno saiu com sucesso!');
@@ -104,5 +97,17 @@ class SaidaController extends Controller
         $aluno = Aluno::find($id);
 
         return Response::json($aluno);
+    }
+
+    public function post(Request $request)
+    {
+        $saida = new Saida();
+        $ajax = $saida::create([
+            'aluno_id' => $request->aluno_id,
+            'created_at' => $request->siteUrl,
+            'updated_at' => $request->siteUrl
+        ]);
+
+        return redirect()->route('saida.create');
     }
 }

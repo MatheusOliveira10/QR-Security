@@ -4,14 +4,14 @@ document.getElementById('chamada').addEventListener(resultFunction, saveBookmark
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
-                      var siteUrl = new Date();
-                    var dia = siteUrl.getDate();
-                    var mes = siteUrl.getMonth()+1;
-                    var ano = siteUrl.getFullYear();
-                    var hora = siteUrl.getHours();
-                    var minuto = siteUrl.getMinutes();
-                    var segundo = siteUrl.getSeconds();
-                      if(dia<10)
+  var siteUrl = new Date();
+  var dia = siteUrl.getDate();
+  var mes = siteUrl.getMonth()+1;
+  var ano = siteUrl.getFullYear();
+  var hora = siteUrl.getHours();
+  var minuto = siteUrl.getMinutes();
+  var segundo = siteUrl.getSeconds();
+  if(dia<10)
   {
     dia = '0' + dia;
   }
@@ -36,12 +36,15 @@ function saveBookmark(e){
     hora = '0' + hora;
   }
 
-                    siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
+  siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
+
+  var timestamp = document.getElementById('created_at');
+  timestamp.value = siteUrl;
 
   var nome = '';
 
   var siteName = document.getElementById('aluno').value;
-  var request = $.get('/saida/fetch/' + siteName)
+  var request = $.get('/saida/fetch/' + siteName);
   var nome = request.done(function(response){
       
     
@@ -51,8 +54,10 @@ function saveBookmark(e){
 
 
     var bookmark = {
+      aluno_id: siteName,
       name: nome,
-      url: siteUrl
+      created_at: siteUrl,
+      updated_at: siteUrl
     }  
 
   /*
@@ -95,10 +100,8 @@ function deleteBookmark(url){
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Loop throught bookmarks
   for(var i =0;i < bookmarks.length;i++){
-    if(bookmarks[i].url == url){
       // Remove from array
       bookmarks.splice(i, 1);
-    }
   }
   // Re-set back to localStorage
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
@@ -113,25 +116,28 @@ function fetchBookmarks(){
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Get output id
   var bookmarksResults = document.getElementById('bookmarksResults');
+  
+    var siteName = document.getElementById('aluno').value;
 
   // Build output
   bookmarksResults.innerHTML = '';
   for(var i = 0; i < bookmarks.length; i++){
+    var id = bookmarks[i].aluno_id;
     var name = bookmarks[i].name;
-    var url = bookmarks[i].url;
+    var url = bookmarks[i].created_at;
 
     bookmarksResults.innerHTML += '<div class="well">'+
-                                  '<h3>'+name+
-                                  ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' +
+                                  '<h3>' + id + ' - ' + name+
                                   ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
                                   '</h3>'+
-                                  '</div>'+
-                                  '<input type="submit" name="submit" class="btn btn-block btn-default">';
+                                  '</div>';
+                                  
 
                                     var objetoDados = document.getElementById('created_at');
 	objetoDados.value = bookmarks;
 
   }
+  bookmarksResults.innerHTML += '<input type="submit" onclick="submit()" name="submit" class="btn btn-block btn-default">';
 }
 
 // Validate Form
@@ -150,4 +156,25 @@ function validateForm(siteName, siteUrl){
   }
 
   return true;
+}
+
+function submit()
+{
+  var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+  $.ajax(
+    {
+      type: 'POST',
+      url: '/saida/post',
+      dataType: 'json',
+      success: function(submit)
+      {
+        console.log(submit);
+      },
+      data: { 
+      aluno_id:bookmarks.aluno_id,
+      created_at:bookmarks.created_at,
+      _token: token
+    },
+    })
 }

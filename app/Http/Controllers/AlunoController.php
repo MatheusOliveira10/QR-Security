@@ -11,11 +11,6 @@ use Carbon\Carbon;
 
 class AlunoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +28,7 @@ class AlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
         return view('alunos.create');
     }

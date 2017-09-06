@@ -2374,7 +2374,7 @@ th {
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 3px solid #20B2AA;
-  background-color: #DCDCDC;
+  background-color: transparent;
   font-family: Arial, Georgia, Times, serif;
 }
 .table > thead > tr > th {
@@ -2612,7 +2612,7 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   font-family: Arial, Georgia, Times, serif;
 }
 input[type="search"] {
@@ -3211,9 +3211,8 @@ fieldset[disabled] .btn-default.focus {
   background-color: #333;
 }
 .btn-primary {
-  color: #483c3c;
-  background-color: #afcdd7;
-  border-radius: 15px;
+  color: #20b2aa;
+  background-color: #fff;
 }
 .btn-primary1 {
   padding-right: 115px;
@@ -3224,11 +3223,11 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
+  background-color: #eee;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #20b2aa;
+  color: #55c8ee;
+  background-color: #fff;
 }
 .btn-primary:active,
 .btn-primary.active,

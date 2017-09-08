@@ -16,6 +16,7 @@
 {{ Html::style('css/styles.css') }}
 {{ Html::style('css/select2.min.css') }}
 {{ Html::style('css/bootstrap.css') }}
+{{ Html::style('fullcalendar/fullcalendar.css') }}
 
 @yield('stylesheets')
 

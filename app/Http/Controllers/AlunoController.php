@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Sala;
 use App\Aluno;
 use App\Dia;
+use App\User;
 use Session;
 use Carbon\Carbon;
 
@@ -30,7 +31,9 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        return view('alunos.create');
+        $salas = Sala::all();
+        $users = User::all();
+        return view('alunos.create', compact('salas', 'users'));
     }
 
     /**

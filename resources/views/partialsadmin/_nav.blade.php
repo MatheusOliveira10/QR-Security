@@ -19,6 +19,7 @@
         <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create">Checar Entrada</a></li>
         <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create">Checar Saída</a></li>
         <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Alunos</a></li>
+        <li class="{{ Request::is('register') ? "active" : "" }}"><a href="{{ route('register')}}">Registrar Usuário</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())

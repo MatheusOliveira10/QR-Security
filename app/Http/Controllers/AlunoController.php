@@ -49,13 +49,13 @@ class AlunoController extends Controller
         $aluno->id = $request->id;
         $aluno->nome = $request->nome;
         $aluno->sala_id = $request->sala_id;
-        $aluno->timestamps();
+        $aluno->user_id = $request->user_id;
 
         $aluno->save();
         
         Session::flash('success', 'Aluno cadastrado com sucesso!');
 
-        return redirect()->route('alunos.index');
+        return redirect()->route('admin.dashboard');
 
     }
 

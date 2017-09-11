@@ -148,7 +148,7 @@ class FrequenciaController extends Controller
     {
         $events = [];
         $events2 = [];
-        $aluno = Aluno::where ('user_id', Auth::id())->first();
+        $aluno = Aluno::all()->where('user_id', Auth::id())->first();
         $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
         $saidas = Saida::all()->where('aluno_id', $aluno->id);
         foreach ($frequencias as $frequencia) { 

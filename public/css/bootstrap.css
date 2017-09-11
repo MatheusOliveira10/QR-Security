@@ -11,6 +11,7 @@ html {
       position: relative;
     min-height: 100%;
 }
+
 html, body{
   height:100%;
     width: 100%;
@@ -118,6 +119,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+  color: #20b2aa;
 }
 dfn {
   font-style: italic;
@@ -1159,8 +1161,8 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #000;
-  background-image: url("../images/fundo.jpg");
-  font-family: "Avantgarde";
+  background-color: #313030;
+  font-family: sans-serif;
    min-height: 100vh;
 }
 input,
@@ -1365,6 +1367,7 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
+  color: #fff;
 }
 h4,
 .h4 {
@@ -1409,6 +1412,7 @@ mark,
 }
 .text-center {
   text-align: center;
+  color: white;
 }
 .text-center .footer-line{
   text-align: center;
@@ -3100,7 +3104,30 @@ select[multiple].input-lg {
 .btn {
   padding-right: 100px;
   display: inline-block;
-  padding: 20px 140px;
+  padding: 15px 100px;
+  margin-left: 40px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+.btn1 {
+  padding-right: 100px;
+  display: inline-block;
+  padding: 15px 52px;
+  margin-left: 40px;
   margin-bottom: 0;
   font-size: 20px;
   font-weight: normal;
@@ -3211,23 +3238,36 @@ fieldset[disabled] .btn-default.focus {
   background-color: #333;
 }
 .btn-primary {
+<<<<<<< HEAD
   color: #20b2aa;
   background-color: #fff;
+=======
+  color: #483c3c;
+  background-color: white;
+  border-radius: 0;
+>>>>>>> d40a2235a8a79a0537291395cba09c0dce964cf8
 }
 .btn-primary1 {
   padding-right: 115px;
   color: #483c3c;
-  background-color: #afcdd7;
-  border-radius: 15px;
+  background-color: white;
+  border-radius: 0;
 }
 .btn-primary:focus,
 .btn-primary.focus {
+<<<<<<< HEAD
   color: #fff;
   background-color: #eee;
 }
 .btn-primary:hover {
   color: #55c8ee;
   background-color: #fff;
+=======
+  color: #20b2aa;
+}
+.btn-primary:hover {
+  color: #20B2AA;
+>>>>>>> d40a2235a8a79a0537291395cba09c0dce964cf8
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3498,9 +3538,9 @@ fieldset[disabled] .btn-danger.focus {
 }
 .btn-link {
   font-weight: normal;
-  color: #337ab7;
+  color: white;
   border-radius: 0;
-  padding-left: 210px;
+  padding-left: 30px;
   font-size: 17px;
 }
 .btn-link,
@@ -4594,7 +4634,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: rgba(105, 105, 105, 0.49);
+  background-color: black;
   border-bottom-color:#20B2AA;
   border-bottom-width: thick;
   font-family: 'Trebuchet MS', Georgia, Times, serif;
@@ -4617,7 +4657,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: rgba(0, 0, 0, 0.5);
+  color: #20B2AA;
   background-color: rgba(105, 105, 105, 0.0);
 }
 .navbar-default .navbar-nav > .active > a{
@@ -5561,13 +5601,13 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
-  background-color: rgb(32, 178, 170);
+  background-color: #transparent;
   height: 240px;
   border-radius: 10px;
 }
 .panel-body2 {
   padding: 15px;
-  background-color: rgb(32, 178, 170);
+  background-color: #transparent;
   height: 300px;
   border-radius: 10px;
 }
@@ -5800,7 +5840,7 @@ button.list-group-item-danger.active:focus {
   font-size: 19px;
   font-weight: bold;
   text-align: center;
-  background-color: rgb(32, 178, 170);
+  background-color: #transparent;
   border-color: #ddd;
   letter-spacing: 3px;
   border-radius: 10px;

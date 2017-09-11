@@ -20,9 +20,10 @@ class FrequenciaController extends Controller
      */
     public function index()
     {
-        $alunos = Aluno::all();
+        $alunos = Aluno::all()->where('user_id', Auth::id());
+        $dias = Frequencia::all()->where('aluno_id', $aluno->id);
 
-        return view('frequencia.index', compact('alunos'));
+        return view('frequencia.index', compact('alunos', 'dias'));
     }
 
     /**

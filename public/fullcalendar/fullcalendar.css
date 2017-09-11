@@ -32,7 +32,7 @@ body .fc { /* extra precedence to overcome jqui */
 .fc-unthemed .fc-popover,
 .fc-unthemed .fc-list-view,
 .fc-unthemed .fc-list-heading td {
-	border-color: #ddd;
+	border-color: #20b2aa;
 }
 
 .fc-unthemed .fc-popover {
@@ -42,7 +42,9 @@ body .fc { /* extra precedence to overcome jqui */
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-popover .fc-header,
 .fc-unthemed .fc-list-heading td {
-	background: #eee;
+	background: #000;
+	border-color: #20b2aa;
+	color: #fff;
 }
 
 .fc-unthemed .fc-popover .fc-header .fc-close {
@@ -851,6 +853,7 @@ a.fc-more:hover {
 /* the first thing within each left/center/right section */
 .fc .fc-toolbar > * > :first-child { /* extra precedence to override button border margins */
 	margin-left: 0;
+	color: #fff;
 }
 	
 /* title text */
@@ -1333,10 +1336,14 @@ be a descendant of the grid when it is being dragged.
 .fc-list-table td {
 	border-width: 1px 0 0;
 	padding: 8px 14px;
+	background-color: #20b2aa;
+	border-color: #000;
 }
 
 .fc-list-table tr:first-child td {
 	border-top-width: 0;
+	background-color: #000;
+	color: #fff;
 }
 
 /* day headings with the list */
@@ -1409,5 +1416,6 @@ be a descendant of the grid when it is being dragged.
 }
 
 .fc-unthemed .fc-list-empty { /* theme will provide own background */
-	background-color: #eee;
+	background-color: #313130;
+	color: #ffffff;
 }

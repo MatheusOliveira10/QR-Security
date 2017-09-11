@@ -16,7 +16,7 @@ Route::get('/phpinfo', function () {
 });
 
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
 
 Auth::routes();

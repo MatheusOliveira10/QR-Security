@@ -3,7 +3,6 @@
 @section('title', '| Frequência do Aluno')
 
 @section('content')
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css'/>
 
     <h3 class="page-title">Frequência <strong> {{$aluno->nome}}</strong></h3>
 

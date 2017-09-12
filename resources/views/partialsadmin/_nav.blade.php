@@ -15,10 +15,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
+        <li class="{{ Request::is('/admin') ? "active" : "" }}"><a href="/admin">Home</a></li>
         <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create">Checar Entrada</a></li>
         <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create">Checar Saída</a></li>
         <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Alunos</a></li>
+        <li class="{{ Request::is('alunos/create') ? "active" : "" }}"><a href="/alunos/create">Cadastrar Aluno</a></li>
         <li class="{{ Request::is('register') ? "active" : "" }}"><a href="{{ route('register')}}">Registrar Usuário</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

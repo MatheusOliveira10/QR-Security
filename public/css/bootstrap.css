@@ -88,8 +88,8 @@ width: 70%;
 width: 3%;
 }
 .footer {
-display: table-row;
-    height: 1px;
+  display: table-row;
+  height: 1px;
 }
 audio,
 canvas,
@@ -3104,10 +3104,10 @@ select[multiple].input-lg {
 .btn {
   padding-right: 100px;
   display: inline-block;
-  padding: 15px 100px;
+  padding: 10px 104px;
   margin-left: 40px;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -3238,14 +3238,9 @@ fieldset[disabled] .btn-default.focus {
   background-color: #333;
 }
 .btn-primary {
-<<<<<<< HEAD
-  color: #20b2aa;
-  background-color: #fff;
-=======
-  color: #483c3c;
-  background-color: white;
-  border-radius: 0;
->>>>>>> d40a2235a8a79a0537291395cba09c0dce964cf8
+  color: #fff;
+  background-color: #20b2aa;
+  border-radius: 20px;
 }
 .btn-primary1 {
   padding-right: 115px;
@@ -3255,19 +3250,10 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary:focus,
 .btn-primary.focus {
-<<<<<<< HEAD
-  color: #fff;
-  background-color: #eee;
-}
-.btn-primary:hover {
-  color: #55c8ee;
-  background-color: #fff;
-=======
   color: #20b2aa;
 }
 .btn-primary:hover {
   color: #20B2AA;
->>>>>>> d40a2235a8a79a0537291395cba09c0dce964cf8
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3540,7 +3526,7 @@ fieldset[disabled] .btn-danger.focus {
   font-weight: normal;
   color: white;
   border-radius: 0;
-  padding-left: 30px;
+  padding-left: 40%;
   font-size: 17px;
 }
 .btn-link,
@@ -5601,13 +5587,13 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
-  background-color: #transparent;
+  background-color: transparent;
   height: 240px;
   border-radius: 10px;
 }
 .panel-body2 {
   padding: 15px;
-  background-color: #transparent;
+  background-color: transparent;
   height: 300px;
   border-radius: 10px;
 }
@@ -5840,9 +5826,8 @@ button.list-group-item-danger.active:focus {
   font-size: 19px;
   font-weight: bold;
   text-align: center;
-  background-color: #transparent;
+  background-color: transparent;
   border-color: #ddd;
-  letter-spacing: 3px;
   border-radius: 10px;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {

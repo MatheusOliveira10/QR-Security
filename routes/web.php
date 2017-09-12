@@ -32,12 +32,12 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::prefix('alunos')->group(function() {
-    Route::post('/', ['uses' => 'AlunoController@store', 'as' => 'alunos.store'])->middleware('auth:admin');
-    Route::get('/{id}/edit', ['uses' => 'AlunoController@edit', 'as' => 'alunos.edit'])->middleware('auth:admin');
-    Route::put('/{id}', ['uses' => 'AlunoController@update', 'as' => 'alunos.update'])->middleware('auth:admin');
-    Route::delete('/{id}', ['uses' => 'AlunoController@destroy', 'as' => 'alunos.destroy'])->middleware('auth:admin');
+    Route::get('/create', 'AlunoController@create')->name('alunos.create');
+    Route::post('/', ['uses' => 'AlunoController@store', 'as' => 'alunos.store']);
+    Route::get('/{id}/edit', ['uses' => 'AlunoController@edit', 'as' => 'alunos.edit']);
+    Route::put('/{id}', ['uses' => 'AlunoController@update', 'as' => 'alunos.update']);
+    Route::delete('/{id}', ['uses' => 'AlunoController@destroy', 'as' => 'alunos.destroy']);
     Route::get('/', 'AlunoController@index')->name('alunos.index');
-    Route::get('/create', 'AlunoController@create')->name('alunos.create')->middleware('auth:admin');
 });
 
 Route::prefix('frequencia')->group(function() {

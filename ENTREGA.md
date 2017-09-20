@@ -1,24 +1,36 @@
 <h1> TCC QR Security </h1>
 
+<strong>Grupo:</strong> <br />
+<ul>
+  <li>Caio Gianotto de Melo</li>
+  <li>Guilherme Oliveira Lombardi</li>
+  <li>Lucas Eduardo Manera</li>
+  <li>Lucas Sartorelli Leinatti</li>
+  <li>Matheus Luiz de Oliveira</li>
+  <li>Maxwell Arruda</li>
+  <li>Wilgner Ferreira Delfino</li>
+</ul>
+
 <strong> Objetivo Principal da Sprint: </strong> <br />
-Acertar a entrada de alunos no sistema
-Fazer a dashboard do admin
+<ul>
+  <li>Implementar AJAX no sistema</li> 
+  <li>Finalizar Design</li>
+  <li>Melhorar Informações Usuário Normal</li>
+</ul>
 
 <strong> Objetivos Intrínsecos: </strong> <br />
 <ul>
-<li>Modelar o banco de dados da entrada, (Matheus e Maxwell) </li>
-<li>Adicionar o plugin WebCodeCamJS, (Matheus e Maxwell) </li>
-<li>Autenticação (Matheus) </li>
-<li>Montar a página HTML e Bootstrap (Lucas Manera, Caio e Wilgner)</li>
-<li>"Gerenciamento" (Guilherme) </li>
-<li>Tradução, Menus e NavBars (Lucas Sartorelli)</li>
-<li>Consulta de Dados do Admin e do Usuário Comum (Matheus, Maxwell e Lucas Sartorelli)</li>
+<li>AJAX páginas de Entrada e Saída, (Matheus e Maxwell) </li>
+<li>CRUD AJAX Alunos, (Matheus e Lucas Sartorelli) </li>
+<li>Fix páginas de login (Lucas Manera e Wilgner)</li>
+<li>Montar página index [Usuário não-logado] (Lucas Manera e Caio)</li>
+<li>Adicionar informações à pagina index [Usuário logado] (Matheus e Maxwell) </li>
 </ul>
 
 <h1>Para teste, proceder da seguinte maneira:</h1>
 
 <ul>
-  <li>Na hora da migration, rodar o comando php artisan serve --seed</li>
+  <li>Na hora da migration, rodar o comando php artisan migrate --seed</li>
   <li><h3>Administrador:</h3></li>
   <li>Login: admin@admin.com</li>
   <li>Senha: 123123</li>
@@ -32,5 +44,4 @@ Fazer a dashboard do admin
   <li>Se quiser cadastrar mais salas, utilize o phpmyAdmin</li>
   <li>Não faremos cadastro de salas pois um json já está sendo preparado para popular o banco automaticamente no momento do migrate</li>
   <li>Caso o botão Login Admin não estiver funcionando, apague no navegador os cookies gerados pelo laravel, e o site voltará ao normal (token e session)</li>
-  <li><h1>P.S. Sistema de saída de alunos em desenvolvimento, porém quando pronto vai ser idêntico ao de entrada</li>
 </ul>

@@ -38,9 +38,6 @@ function saveBookmark(e){
 
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
-  var timestamp = document.getElementById('created_at');
-  timestamp.value = siteUrl;
-
   var nome = '';
 
   var siteName = document.getElementById('aluno').value;
@@ -84,9 +81,6 @@ function saveBookmark(e){
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
-
-  // Clear form
-  document.getElementById('chamada').reset();
 
   // Re-fetch bookmarks
   fetchBookmarks();
@@ -133,11 +127,10 @@ function fetchBookmarks(){
                                   '</div>';
                                   
 
-                                    var objetoDados = document.getElementById('created_at');
+  var objetoDados = document.getElementById('created_at');
 	objetoDados.value = bookmarks;
 
   }
-  bookmarksResults.innerHTML += '<input type="submit" onclick="submit()" name="submit" class="btn btn-block btn-default">';
 }
 
 // Validate Form
@@ -158,23 +151,102 @@ function validateForm(siteName, siteUrl){
   return true;
 }
 
-function submit()
+function submitS()
 {
-  var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+var siteUrl = new Date();
+  var dia = siteUrl.getDate();
+  var mes = siteUrl.getMonth()+1;
+  var ano = siteUrl.getFullYear();
+  var hora = siteUrl.getHours();
+  var minuto = siteUrl.getMinutes();
+  var segundo = siteUrl.getSeconds();
+  if(dia<10)
+  {
+    dia = '0' + dia;
+  }
+
+  if(mes<10)
+  {
+    mes = '0' + mes;
+  }
+
+  if(segundo<10)
+  {
+    segundo = '0' + segundo;
+  }
+
+  if(minuto<10)
+  {
+    minuto = '0' + minuto;
+  }
+
+  if(hora<10)
+  {
+    hora = '0' + hora;
+  }
+
+  siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
+
+  var aluno = $("#aluno").val();
 
   $.ajax(
     {
       type: 'POST',
-      url: '/saida/post',
-      dataType: 'json',
+      url: '/api/saida/store',
+      data: {aluno_id:aluno, created_at: siteUrl},
       success: function(submit)
       {
         console.log(submit);
       },
-      data: { 
-      aluno_id:bookmarks.aluno_id,
-      created_at:bookmarks.created_at,
-      _token: token
-    },
-    })
+    });
+}
+
+function submitF()
+{
+var siteUrl = new Date();
+  var dia = siteUrl.getDate();
+  var mes = siteUrl.getMonth()+1;
+  var ano = siteUrl.getFullYear();
+  var hora = siteUrl.getHours();
+  var minuto = siteUrl.getMinutes();
+  var segundo = siteUrl.getSeconds();
+  if(dia<10)
+  {
+    dia = '0' + dia;
+  }
+
+  if(mes<10)
+  {
+    mes = '0' + mes;
+  }
+
+  if(segundo<10)
+  {
+    segundo = '0' + segundo;
+  }
+
+  if(minuto<10)
+  {
+    minuto = '0' + minuto;
+  }
+
+  if(hora<10)
+  {
+    hora = '0' + hora;
+  }
+
+  siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
+
+  var aluno = $("#aluno").val();
+
+  $.ajax(
+    {
+      type: 'POST',
+      url: '/api/frequencia/store',
+      data: {aluno_id:aluno, created_at: siteUrl},
+      success: function(submit)
+      {
+        console.log(submit);
+      },
+    });
 }

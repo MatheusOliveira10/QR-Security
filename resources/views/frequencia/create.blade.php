@@ -13,13 +13,15 @@
         
         </div>
         <div class="col-md-6">
-	            <form action="{{route('frequencia.store')}}" method="post" id="chamada" name="chamada">	
                     <div class="col-md-8">
-                        {{csrf_field()}}
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
+                        <input type="hidden" id="created_at" name="created_at" value="">
 
                 </form>
+                                <h1>Alunos:</h1>
+                <div id="bookmarksResults">
+                </div>
         </div>
     </div>
     </div>
@@ -28,6 +30,7 @@
     {!! Html::script('js/webcodecamjs.js') !!}
     {!! Html::script('js/qrcodelib.js') !!}
     {!! Html::script('js/main.js') !!}
+    {!! Html::script('js/main2.js') !!}
     {!! Html::script('js/filereader.js') !!}
     {!! Html::script('js/select2.min.js') !!}
     {!! Html::script('js/DecoderWorker.js') !!}
@@ -37,9 +40,13 @@
             var arg = {
                 resultFunction: function(result) {
                     var rm = result.code;
+                    
                     var objetoDados = document.getElementById('aluno');
 			        objetoDados.value = rm;
-                    document.getElementById('chamada').submit();
+
+                    saveBookmark();
+                    submitF();
+
                 }
             };
             var decoder = new WebCodeCamJS("canvas").buildSelectMenu(document.getElementById('camera'), 'environment|back').init(arg).play();
@@ -51,6 +58,5 @@
         <script type="text/javascript">
 		$('.select2-multi').select2();
         </script>
-
-        
+       
 @endsection

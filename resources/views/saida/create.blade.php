@@ -13,9 +13,7 @@
         
         </div>
         <div class="col-md-6">
-	            <form action="{{route('saida.post')}}" method="post" id="chamada" name="chamada">	
                     <div class="col-md-8">
-                        {{csrf_field()}}
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
                         <input type="hidden" id="created_at" name="created_at" value="">
@@ -47,6 +45,7 @@
 			        objetoDados.value = rm;
 
                     saveBookmark();
+                    submitS();
 
                 }
             };

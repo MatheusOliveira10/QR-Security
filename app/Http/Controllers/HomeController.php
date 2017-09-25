@@ -30,10 +30,11 @@ class HomeController extends Controller
     {
         $aluno = Aluno::all()->where('user_id', Auth::id())->first();
         $dias = Frequencia::all()->where('aluno_id', $aluno->id)->count();
+        $alunosdia = Frequencia::all()->where('created_at', '>=', date('Y-m-d'))->count();
         $user = Auth::user();
         $nome = $user->name;
 
         
-        return view('index', compact('aluno', 'dias', 'nome'));
+        return view('index', compact('aluno', 'dias', 'nome', 'alunosdia'));
     }
 }

@@ -1,7 +1,7 @@
 
        </br>
             <hr>
-            <p class="text-center">©Copyright QR Security - Todos os direitos reservados</p>
+            <div class="row">
 
 <div class="figurer">
   <a class="tile3" href="https://designersbrasileiros.com.br/sites-para-quem-trabalha-com-design-grafico/"> <img class="tile3" src="../images/facepint.png" alt="Facebook" width="25"></img></a>

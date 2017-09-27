@@ -14,7 +14,7 @@
       @yield('content')
 
     </div> <!-- end of .container --> 
-    <footer class="fixed-bottom">
+    <footer class="footer">
       <hr>
       <div class="col-md-3 col-md-offset-1">
         <h3>QR Security</h3>

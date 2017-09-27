@@ -5707,6 +5707,10 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #fff;
+  text-align: center;
+  font-family: 'Trebuchet MS', Georgia, Times, serif;
+  font-size: 16px;
+  font-weight: bold;
   background-color: #20b2aa;
   border-color: #dddddd;
 }

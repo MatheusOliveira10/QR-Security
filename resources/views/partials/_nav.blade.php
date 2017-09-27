@@ -22,14 +22,15 @@
         @if (Auth::check())
         
         <li class="dropdown">
-          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Olá Sr.(a) {{ Auth::user()->name }} <span class="caret"></span></a>
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">Olá Sr.(a) {{ Auth::user()->name }}
+          <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:40px; height:40px; position:absolute; top:5px; left:5px; border-radius:50%;">
+          <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{ route('frequencia.index') }}">Frequência do Aluno</a></li>
-            <li role="separator" class="divider"></li>
+            <li><a href="{{ url('/perfil') }}"><i class="fa fa-btn fa-user"></i>  Perfil</a></li>
             <li>
             <a href="{{ route('logout') }}"
                  onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
+                 document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i>
                  Logout
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

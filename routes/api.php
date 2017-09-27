@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/saida/store', 'SaidaControllerApi@store');
+Route::post('/saida/delete', 'SaidaControllerApi@destroy');
 Route::post('/frequencia/store', 'FrequenciaControllerApi@store');

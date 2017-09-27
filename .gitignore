@@ -3,6 +3,8 @@
 /public/hot
 /storage/*.key
 /vendor
+/public/uploads/avatars/*
+!/public/uploads/avatars/default.jpg
 /.idea
 Homestead.json
 Homestead.yaml

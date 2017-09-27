@@ -120,9 +120,11 @@ class SaidaControllerApi extends Controller
      * @param  \App\Frequencia  $frequencia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Frequencia $frequencia)
+    public function destroy(Saida $saida, Request $request)
     {
-        //
+        $saida = Saida::find($request->aluno_id);
+        $saida->delete();
+        return $saida;
     }
 
     public function calendario(Frequencia $frequencia)

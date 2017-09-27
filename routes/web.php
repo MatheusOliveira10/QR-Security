@@ -27,6 +27,8 @@ Route::put('/alunos/{id}', ['uses' => 'AlunoController@chamada', 'as' =>'alunos.
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/perfil', 'AdminController@perfil');
+    Route::post('/perfil', 'AdminController@avatar');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@Login')->name('admin.login.submit');
 });
@@ -63,3 +65,6 @@ Route::prefix('saida')->group(function() {
     Route::post('/post', ['uses' => 'SaidaController@post', 'as' => 'saida.post']);
     Route::get('/create', 'SaidaController@create')->name('saida.create')->middleware('auth:admin');
 });
+
+Route::get('perfil', 'UserController@perfil');
+Route::post('perfil', 'UserController@avatar');

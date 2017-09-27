@@ -8,7 +8,8 @@
                 <div class="panel-heading">Login do Administrador</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.login.submit') }}">                        {{ csrf_field() }}
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.login.submit') }}">         
+                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
@@ -50,7 +51,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in"></i>
                                     Login
                                 </button>
 

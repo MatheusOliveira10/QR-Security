@@ -6,31 +6,11 @@ use Illuminate\Http\Request;
 use Auth;
 use Image;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('indexadmin');
-    }
-
     public function perfil()
     {
-        return view('perfiladmin', array('user' => Auth::user()) );
+        return view('perfil', array('user' => Auth::user()) );
     }
 
     public function avatar(Request $request)
@@ -45,6 +25,6 @@ class AdminController extends Controller
             $user->save();
         }
 
-        return view('perfiladmin', array('user' => Auth::user()) );
+        return view('perfil', array('user' => Auth::user()) );
     }
 }

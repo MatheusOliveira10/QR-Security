@@ -54,7 +54,8 @@ function saveBookmark(e){
       aluno_id: siteName,
       name: nome,
       created_at: siteUrl,
-      updated_at: siteUrl
+      updated_at: siteUrl,
+      index: ""
     }  
 
   /*
@@ -89,7 +90,7 @@ function saveBookmark(e){
 }
 
 // Delete bookmark
-function deleteBookmark(url){
+function deleteBookmark(index){
   // Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Loop throught bookmarks
@@ -97,8 +98,20 @@ function deleteBookmark(url){
       // Remove from array
       bookmarks.splice(i, 1);
   }
-  // Re-set back to localStorage
+
+  $.ajax(
+    {
+      type: 'POST',
+      url: '/api/saida/delete',
+      data: {aluno_id:index},
+      success: function(submit)
+      {
+        console.log(submit);
+      },
+    });
+      // Re-set back to localStorage
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
 
   // Re-fetch bookmarks
   fetchBookmarks();
@@ -119,10 +132,11 @@ function fetchBookmarks(){
     var id = bookmarks[i].aluno_id;
     var name = bookmarks[i].name;
     var url = bookmarks[i].created_at;
+    var index = i;
 
     bookmarksResults.innerHTML += '<div class="well">'+
                                   '<h3>' + id + ' - ' + name+
-                                  ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
+                                  '<a onclick="deleteBookmark(\''+index+'\')" class="pull-right btn btn-danger" href="#">Ignorar Presença</a> ' +
                                   '</h3>'+
                                   '</div>';
                                   
@@ -203,7 +217,7 @@ var siteUrl = new Date();
 
 function submitF()
 {
-var siteUrl = new Date();
+    var siteUrl = new Date();
   var dia = siteUrl.getDate();
   var mes = siteUrl.getMonth()+1;
   var ano = siteUrl.getFullYear();

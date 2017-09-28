@@ -55,7 +55,6 @@ function saveBookmark(e){
       name: nome,
       created_at: siteUrl,
       updated_at: siteUrl,
-      index: ""
     }  
 
   /*
@@ -90,25 +89,17 @@ function saveBookmark(e){
 }
 
 // Delete bookmark
-function deleteBookmark(index){
+function deleteBookmark(id){
   // Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Loop throught bookmarks
   for(var i =0;i < bookmarks.length;i++){
+      if(bookmarks[i].aluno_id == id){
       // Remove from array
       bookmarks.splice(i, 1);
+      }
   }
 
-  $.ajax(
-    {
-      type: 'POST',
-      url: '/api/saida/delete',
-      data: {aluno_id:index},
-      success: function(submit)
-      {
-        console.log(submit);
-      },
-    });
       // Re-set back to localStorage
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
@@ -136,7 +127,7 @@ function fetchBookmarks(){
 
     bookmarksResults.innerHTML += '<div class="well">'+
                                   '<h3>' + id + ' - ' + name+
-                                  '<a onclick="deleteBookmark(\''+index+'\')" class="pull-right btn btn-danger" href="#">Ignorar Presença</a> ' +
+                                  '<a onclick="deleteBookmark(\''+id+'\')" class="pull-right btn btn-danger" href="#">Ignorar Presença</a> ' +
                                   '</h3>'+
                                   '</div>';
                                   

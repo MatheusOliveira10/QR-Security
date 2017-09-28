@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(SalaTableSeeder::class);
+        
         DB::table('users')->insert([
             'name' => 'Binho',
             'email' => 'binho@binho.com',
@@ -23,8 +25,5 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123123'),
         ]);
 
-        DB::table('salas')->insert([
-            'nome' => '3 EMIA',
-        ]);
     }
 }

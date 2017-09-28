@@ -26,6 +26,14 @@ class SaidaControllerApi extends Controller
     
     public function store(Request $request)
     {
+        $teste = Saida::all()
+                ->where('created_at', '>=', date('Y-m-d'))
+                ->where('aluno_id', $request->aluno_id)
+                ->count();
+
+        if($teste < 1)
+        {
+
         $saida = new Saida();
 
         $saida->aluno_id = $request->aluno_id;
@@ -33,7 +41,9 @@ class SaidaControllerApi extends Controller
         $saida->save();
 
         return $saida;
-
+        }else{
+            return "Opa fion, vc já saiu meu parssa!";
+        }    
     }
 
     /**

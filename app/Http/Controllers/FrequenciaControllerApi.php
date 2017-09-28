@@ -44,6 +44,14 @@ class FrequenciaControllerApi extends Controller
      */
     public function store(Request $request)
     {
+        $teste = Frequencia::all()
+                        ->where('created_at', '>=', date('Y-m-d'))
+                        ->where('aluno_id', $request->aluno_id)
+                        ->count();
+
+        if($teste < 1)
+        {                
+        
         $frequencia = new Frequencia();
 
         $frequencia->aluno_id = $request->aluno_id;
@@ -51,6 +59,10 @@ class FrequenciaControllerApi extends Controller
         $frequencia->save();
 
         return $frequencia;
+
+        }else{
+            return "Deu Ruim";
+        }
 
     }
 

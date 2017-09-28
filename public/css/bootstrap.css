@@ -23,12 +23,14 @@ html {
 body {
   margin: 0;
 }
+.ximbinha{
+  text-align: center;
+}
 article,
 aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 main,
@@ -37,6 +39,18 @@ nav,
 section,
 summary {
   display: block;
+}
+.wt{
+ color: white;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 280px;
+  line-height: 25px; /* Vertically center the text there */
+  background-color:#121212;
 }
 audio,
 canvas,
@@ -1087,10 +1101,13 @@ th {
   box-sizing: border-box;
 }
 html {
+  position: relative;
+  min-height: 100%;
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
+  margin-bottom: 340px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #fff;
@@ -1107,13 +1124,13 @@ textarea {
   color: #000;
 }
 a {
-  color: #337ab7;
+  color: white;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+  color: #20B2AA;
+  text-decoration: none;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;

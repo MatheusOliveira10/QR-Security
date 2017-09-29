@@ -16,11 +16,21 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/admin') ? "active" : "" }}"><a href="/admin">Home</a></li>
-        <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create">Checar Entrada</a></li>
-        <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create">Checar Saída</a></li>
-        <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Alunos</a></li>
-        <li class="{{ Request::is('alunos/create') ? "active" : "" }}"><a href="/alunos/create">Cadastrar Aluno</a></li>
-        <li class="{{ Request::is('register') ? "active" : "" }}"><a href="{{ route('register')}}">Registrar Usuário</a></li>
+        <li class="dropdown">
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Checagens
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Entrada</a></li>
+          <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Saída</a></li>
+        </ul>
+        <li class="dropdown">
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Cadastros
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="{{ Request::is('alunos/create') ? "active" : "" }}"><a href="/alunos/create"><i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>&nbsp;Cadastrar Aluno</a></li>
+          <li class="{{ Request::is('register') ? "active" : "" }}"><a href="{{ route('register')}}"><i class="fa fa-btn fa-user fa-fw"></i>&nbsp;Registrar Usuário</a></li>
+        </ul>
+        <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Lista de Alunos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())

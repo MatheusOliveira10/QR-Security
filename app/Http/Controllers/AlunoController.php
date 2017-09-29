@@ -10,6 +10,7 @@ use App\User;
 use Session;
 use Carbon\Carbon;
 use Image;
+use File;
 
 class AlunoController extends Controller
 {
@@ -50,7 +51,6 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         $aluno = new Aluno();
-
         $foto = $request->file('foto');
         $filename = time() . '.' . $foto->getClientOriginalExtension();
         Image::make($foto)->resize(150, 200)->save( public_path('/uploads/alunos/' . $filename) );

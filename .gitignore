@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /public/uploads/avatars/*
+/public/uploads/alunos/*
 !/public/uploads/avatars/default.jpg
 /.idea
 Homestead.json

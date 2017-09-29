@@ -9,7 +9,7 @@
         <div class="col-md-6 col-sm-12">
          <h3>Cadastro de Alunos</h3>
         <hr>
-            <form action="{{route('alunos.store')}}" id="qr" method="POST">
+            <form enctype="multipart/form-data" action="{{route('alunos.store')}}" id="qr" method="POST">
             {{csrf_field()}}
                 <h4>Nome:</h4>
                 <input type="text" class="form-control" id="nome" name="nome" value="">
@@ -27,6 +27,8 @@
                         <option value="{{$user->id}}">{{$user->name}}</option>
                         @endforeach
                     </select>
+                <h4>Foto:</h4>
+                    <input type="file" name="foto">
                 </br></br>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>

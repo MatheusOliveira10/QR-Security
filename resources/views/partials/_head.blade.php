@@ -12,11 +12,8 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>QR Security @yield('title')</title> <!-- CHANGE THIS TITLE FOR EACH PAGE -->
 <link rel="stylesheet" href='css/jquery.dataTables.css'>
-<link href="css/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
-<link href="css/style.css" rel="stylesheet">
 <!-- Bootstrap -->
-{{ Html::style('css/styles.css') }}
 {{ Html::style('css/select2.min.css') }}
 {{ Html::style('css/bootstrap.css') }}
 {{ Html::style('fullcalendar/fullcalendar.css') }}

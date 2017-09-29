@@ -4,7 +4,7 @@
     @include('partials._head')
   </head>
   
-  <body onload="fetchBookmarks()">
+  <body>
 
     @include('partials._nav')    
 

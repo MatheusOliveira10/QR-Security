@@ -17,6 +17,7 @@ class CreateAlunosTable extends Migration
             $table->integer('id')->unsigned();
             $table->primary('id'); 
             $table->string('nome');
+            $table->string('foto');
             $table->integer('sala_id')->unsigned()->nullable();
             $table->foreign('sala_id')->references('id')->on('salas');
             $table->integer('user_id')->unsigned()->nullable();

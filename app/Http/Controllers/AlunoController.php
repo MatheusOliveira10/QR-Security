@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Sala;
 use App\Aluno;
-use App\Dia;
+use App\Frequencia;
 use App\User;
 use Session;
 use Carbon\Carbon;
+use Image;
 
 class AlunoController extends Controller
 {
@@ -50,6 +51,11 @@ class AlunoController extends Controller
     {
         $aluno = new Aluno();
 
+        $foto = $request->file('foto');
+        $filename = time() . '.' . $foto->getClientOriginalExtension();
+        Image::make($foto)->resize(150, 200)->save( public_path('/uploads/alunos/' . $filename) );
+        $aluno->foto = $filename;
+
         $aluno->id = $request->id;
         $aluno->nome = $request->nome;
         $aluno->sala_id = $request->sala_id;
@@ -72,7 +78,8 @@ class AlunoController extends Controller
     public function show($id)
     {
         $aluno = Aluno::find($id);
-        return view('alunos.show', compact('aluno'));
+        $frequencia = Frequencia::all()->where('aluno_id', $id)->count();
+        return view('alunos.show', compact('aluno', 'frequencia'));
     }
 
     /**

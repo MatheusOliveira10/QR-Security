@@ -1,6 +1,3 @@
-// Listen for form submit
-document.getElementById('chamada').addEventListener(resultFunction, saveBookmark);
-
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
@@ -115,7 +112,6 @@ function fetchBookmarks(){
   // Get output id
   var bookmarksResults = document.getElementById('bookmarksResults');
   
-    var siteName = document.getElementById('aluno').value;
 
   // Build output
   bookmarksResults.innerHTML = '';

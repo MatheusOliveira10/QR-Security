@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::prefix('alunos')->group(function() {
+    Route::get('/{id}', ['uses' => 'AlunoController@show', 'as' => 'alunos.show']);
     Route::get('/create', 'AlunoController@create')->name('alunos.create');
     Route::post('/', ['uses' => 'AlunoController@store', 'as' => 'alunos.store']);
     Route::get('/{id}/edit', ['uses' => 'AlunoController@edit', 'as' => 'alunos.edit']);

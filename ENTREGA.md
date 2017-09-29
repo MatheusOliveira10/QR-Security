@@ -22,7 +22,7 @@
 <ul>
 <li>AJAX páginas de Entrada e Saída, (Matheus e Maxwell) </li>
 <li>CRUD AJAX Alunos, (Matheus e Lucas Sartorelli) </li>
-<li>Fix páginas de login (Lucas Manera e Wilgner)</li>
+<li>Fix das páginas de login (Lucas Manera e Wilgner)</li>
 <li>Montar página index [Usuário não-logado] (Lucas Manera e Caio)</li>
 <li>Adicionar informações à pagina index [Usuário logado] (Matheus e Maxwell) </li>
 </ul>

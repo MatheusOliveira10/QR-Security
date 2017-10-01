@@ -69,3 +69,7 @@ Route::prefix('saida')->group(function() {
 
 Route::get('perfil', 'UserController@perfil');
 Route::post('perfil', 'UserController@avatar');
+
+Route::get('/teste', function () {
+    return view('teste');
+});

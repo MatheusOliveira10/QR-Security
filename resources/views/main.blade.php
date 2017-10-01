@@ -5,7 +5,7 @@
   </head>
   
   <body class="vegas-slider">
-
+  
     @include('partials._nav')    
 
     <div class="container">

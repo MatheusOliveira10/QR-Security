@@ -4,7 +4,7 @@
     @include('partials._head')
   </head>
   
-  <body>
+  <body class="vegas-slider">
 
     @include('partials._nav')    
 

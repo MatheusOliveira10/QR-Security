@@ -77,7 +77,9 @@
             <img src="../images/desenvolvedores/Max.jpg" alt="Maxwell Arruda" height="400" width="400" style="border-radius: 250px;">
             <br />
             <h3>Maxwell Arruda</h3>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
+            <p align="justify">Nascido na cidade de Varginha-MG, tem 17 anos, mudou-se para Mogi Mirim-SP em 2010 e está cursando o último
+            ano do curso técnico de Informática para a Internet na ETEC Pedro Ferreira Alves, torce para o São Paulo Futebol Clube. Iniciou
+            neste ano os estudos em Laravel, mas ainda está indeciso em qual faculdade fazer.</p>
           </div>
           <div class="col-md-12">
             <img src="../images/desenvolvedores/Wil.jpg" alt="Wilgner Delfino" height="400" width="400" style="border-radius: 250px;">

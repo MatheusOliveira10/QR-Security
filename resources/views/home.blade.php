@@ -38,13 +38,16 @@
         <div class="col-md-12">
             <div class="text-center">
             <hr>
-        <h1>Os Desenvolvedores:</h1>
+        <h1>Desenvolvedores:</h1>
         <br />
           <div class="col-md-6">
             <img src="../images/desenvolvedores/Caio.jpg" alt="Caio Melo" height="400" width="400" style="border-radius: 250px;">
             <br />
             <h3>Caio Melo</h3>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
+            <p align="justify">Nascido na cidade de Mogi Mirim-SP, tem 17 anos, está cursando o último ano 
+            do curso técnico de Informática para Internet da ETEC Pedro Ferreira Alves. Torce para o Sport 
+            Clube Corinthians Paulista, responsável pela parte de Design do projeto QR Security. Tem como objetivo 
+            principal passar no vestibular da UNESP e se formar em alguma medicina.</p>
           </div>
           <div class="col-md-6">
             <img src="../images/desenvolvedores/Gui.jpg" alt="Guilherme Oliveira" height="400" width="400" style="border-radius: 250px;">
@@ -56,7 +59,10 @@
             <img src="../images/desenvolvedores/Manera.jpg" alt="Lucas Manera" height="400" width="400" style="border-radius: 250px;">
             <br />
             <h3>Lucas Manera</h3>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
+            <p align="justify">Nascido na cidade de Mogi Mirim-SP, tem 17 anos, está cursando o último ano 
+            do curso técnico de Informática para Internet da ETEC Pedro Ferreira Alves. Torce para o Sport 
+            Clube Corinthians Paulista, responsável pela parte de Design do projeto QR Security. Tem como objetivo 
+            principal passar no vestibular da UNESP e se formar em Designer Gráfico.</p>
           </div>
           <div class="col-md-6">
             <img src="../images/desenvolvedores/Sasa.jpg" alt="Lucas Sartorelli" height="400" width="400" style="border-radius: 250px;">

@@ -26,7 +26,7 @@
         color:                   null,
         align:                   'center',
         valign:                  'center',
-        firstTransition:         'burn2',
+        firstTransition:         'fade',
         firstTransitionDuration: null,
         transition:              'fade',
         transitionDuration:      1000,

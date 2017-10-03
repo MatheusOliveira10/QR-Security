@@ -1,0 +1,9 @@
+[
+    {"id": 1, "nome": "Nada" },
+    {"id": 2, "nome": "Carteirinha" },
+    {"id": 3, "nome": "Uniforme" },
+    {"id": 4, "nome": "Atraso" },
+    {"id": 5, "nome": "Carteirinha/Uniforme" },
+    {"id": 6, "nome": "Carteirinha/Atraso" },
+    {"id": 7, "nome": "Uniforme/Atraso" }
+]

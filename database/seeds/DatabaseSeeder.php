@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(SalaTableSeeder::class);
+        $this->call(OcorrenciasTableSeeder::class);
         
         DB::table('users')->insert([
             'name' => 'Binho',

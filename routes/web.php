@@ -52,6 +52,7 @@ Route::prefix('frequencia')->group(function() {
     Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
     Route::get('/', 'FrequenciaController@index')->name('frequencia.index');
     Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');
+    Route::get('/problema', 'FrequenciaController@problema')->name('frequencia.problema')->middleware('auth:admin');
 
 });
 

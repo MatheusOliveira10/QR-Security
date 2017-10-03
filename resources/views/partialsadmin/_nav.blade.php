@@ -22,6 +22,7 @@
         <ul class="dropdown-menu">
           <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Entrada</a></li>
           <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Saída</a></li>
+          <li class="{{ Request::is('frequencia/problema') ? "active" : "" }}"><a href="/frequencia/problema"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>&nbsp;Problemas</a></li>
         </ul>
         <li class="dropdown">
         <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Cadastros

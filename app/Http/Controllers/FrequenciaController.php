@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Frequencia;
+use App\Ocorrencia;
 use App\Saida;
 use App\Aluno;
 use Auth;
@@ -44,14 +45,28 @@ class FrequenciaController extends Controller
      */
     public function store(Request $request)
     {
+        $teste = Frequencia::all()
+                        ->where('created_at', '<=', Carbon::now())
+                        ->where('aluno_id', $request->id)
+                        ->count();
+
+        if($teste < 1)
+        {                
+        
         $frequencia = new Frequencia();
 
-        $frequencia->aluno_id = $request->aluno_id;
+        $frequencia->aluno_id = $request->id;
+        $frequencia->ocorrencia_id = $request->ocorrencia_id;
         $frequencia->save();
-
+        
         Session::flash('success', 'O Aluno entrou com sucesso!');
 
-        return redirect()->route('frequencia.create');
+        return redirect()->route('frequencia.problema');
+        }else{
+        Session::flash('success', 'O Aluno já entrou hoje!');
+
+        return redirect()->route('frequencia.problema');
+        }
 
     }
 
@@ -191,6 +206,12 @@ class FrequenciaController extends Controller
 
         return view('frequencia.show', compact('events', 'aluno', 'events2'));
 
+    }
+
+    public function problema()
+    {
+        $ocorrencias = Ocorrencia::all();
+        return view('frequencia.problema', compact('ocorrencias'));
     }
 
     

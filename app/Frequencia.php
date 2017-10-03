@@ -10,4 +10,9 @@ class Frequencia extends Model
     {
         return $this->belongsTo('App\Aluno');
     }
+
+    public function ocorrencia()
+    {
+        return $this->belongsTo('App\Ocorrencias');
+    }
 }

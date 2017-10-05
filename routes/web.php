@@ -44,6 +44,8 @@ Route::prefix('alunos')->group(function() {
 });
 
 Route::prefix('frequencia')->group(function() {
+    Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');
+    Route::get('/problema', 'FrequenciaController@problema')->name('frequencia.problema')->middleware('auth:admin');
     Route::post('/', ['uses' => 'FrequenciaController@store', 'as' => 'frequencia.store'])->middleware('auth:admin');
     Route::get('/{id}/edit', ['uses' => 'FrequenciaController@edit', 'as' => 'frequencia.edit']);
     Route::put('/{id}', ['uses' => 'FrequenciaController@update', 'as' => 'frequencia.update']);
@@ -51,9 +53,6 @@ Route::prefix('frequencia')->group(function() {
     Route::get('/{id}', ['uses' => 'FrequenciaController@show', 'as' => 'frequencia.show'])->middleware('auth');
     Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
     Route::get('/', 'FrequenciaController@index')->name('frequencia.index');
-    Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');
-    Route::get('/problema', 'FrequenciaController@problema')->name('frequencia.problema')->middleware('auth:admin');
-
 });
 
 Route::prefix('saida')->group(function() {
@@ -73,4 +72,8 @@ Route::post('perfil', 'UserController@avatar');
 
 Route::get('/teste', function () {
     return view('teste');
+});
+
+Route::get('/marcarlida', function(){
+    auth()->user()->unreadNotifications->markAsRead();
 });

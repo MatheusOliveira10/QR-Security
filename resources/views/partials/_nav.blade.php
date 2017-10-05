@@ -24,13 +24,13 @@
         <li class="dropdown" id="marcarlida" onclick="marcarlida()">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
           <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
-          <span class="badge">{{count(auth()->user()->notifications)}}</span></a>
+          <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
               @forelse(auth()->user()->unreadNotifications as $notification)
                 @include('partials.notification.'.snake_case(class_basename($notification->type)))
               @empty
-                Sem Notificações
+                <a href="">Sem Notificações</a>
               @endforelse
             </li>    
           </ul>

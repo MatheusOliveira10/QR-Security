@@ -5,6 +5,7 @@
 /vendor
 /public/uploads/avatars/*
 /public/uploads/alunos/*
+!/public/uploads/alunos/coisa.txt
 !/public/uploads/avatars/default.jpg
 /.idea
 Homestead.json

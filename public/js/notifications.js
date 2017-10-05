@@ -1,3 +1,3 @@
 function marcarlida(){
-    $.get('/api/marcarlida')
+    $.get('/marcarlida');
 }

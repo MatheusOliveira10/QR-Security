@@ -48,7 +48,7 @@ Route::prefix('frequencia')->group(function() {
     Route::get('/{id}/edit', ['uses' => 'FrequenciaController@edit', 'as' => 'frequencia.edit']);
     Route::put('/{id}', ['uses' => 'FrequenciaController@update', 'as' => 'frequencia.update']);
     Route::delete('/{id}', ['uses' => 'FrequenciaController@destroy', 'as' => 'frequencia.destroy']);
-    Route::get('/', ['uses' => 'FrequenciaController@show', 'as' => 'frequencia.show'])->middleware('auth');
+    Route::get('/{id}', ['uses' => 'FrequenciaController@show', 'as' => 'frequencia.show'])->middleware('auth');
     Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
     Route::get('/', 'FrequenciaController@index')->name('frequencia.index');
     Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');

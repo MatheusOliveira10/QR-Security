@@ -7,19 +7,22 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Carbon\Carbon;
+use App\Aluno;
 
 class Attention extends Notification
 {
     use Queueable;
+
+    protected $frequencia;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($frequencia)
     {
-        //
+        $this->frequencia=$frequencia;
     }
 
     /**
@@ -42,7 +45,9 @@ class Attention extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'hora' => Carbon::now()
+            'frequencia' => $this->frequencia,
+            'user' => $notifiable,
+            'aluno' => Aluno::find($this->frequencia->aluno_id)
         ];
     }
 

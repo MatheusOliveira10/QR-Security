@@ -65,7 +65,7 @@ class FrequenciaController extends Controller
         $find = User::find($user);
 
 
-        $find->notify(new Attention());        
+        $find->notify(new Attention($frequencia));        
 
         
         Session::flash('success', 'O Aluno entrou com sucesso!');
@@ -87,50 +87,9 @@ class FrequenciaController extends Controller
      */
     public function show(Frequencia $frequencia, $id)
     {
-        $events = [];
-        $events2 = [];
-        $aluno = Aluno::find($id); 
-        $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
-        $saidas = Saida::all()->where('aluno_id', $aluno->id);
-        foreach ($frequencias as $frequencia) { 
-           $crudFieldValue = $frequencia->getOriginal('created_at'); 
+        $frequencia = Frequencia::find($id);
 
-           if (! $crudFieldValue) {
-               continue;
-           }
-
-           $eventLabel     = $frequencia->nome; 
-           $prefix         = $aluno->nome; 
-           $suffix         = 'Entrou na escola'; 
-           $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
-           $events[]       = [ 
-                'title' => $dataFieldValue, 
-                'start' => $crudFieldValue, 
-                'url'   => route('frequencia.edit', $frequencia->id)
-           ]; 
-        } 
-
-        foreach ($saidas as $saida) { 
-           $crudFieldValue = $saida->getOriginal('created_at'); 
-
-           if (! $crudFieldValue) {
-               continue;
-           }
-
-           $eventLabel     = $saida->nome; 
-           $prefix         = $aluno->nome; 
-           $suffix         = 'Saiu da escola'; 
-           $dataFieldValue = trim($prefix . " " . $eventLabel . " " . $suffix); 
-           $events2[]       = [ 
-                'title' => $dataFieldValue, 
-                'start' => $crudFieldValue, 
-                'url'   => route('saida.edit', $saida->id)
-           ]; 
-        } 
-
-
-
-        return view('frequencia.show', compact('events', 'aluno', 'events2'));
+        return view('frequencia.show', compact('frequencia'));
 
     }
 

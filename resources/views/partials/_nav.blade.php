@@ -21,15 +21,17 @@
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
         
-        <li class="dropdown">
+        <li class="dropdown" id="marcarlida" onclick="marcarlida()">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
           <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
           <span class="badge">{{count(auth()->user()->notifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="">sdsd</a>
-              <a href="">sdsd</a>
-              <a href="">sdsd</a>
+              @forelse(auth()->user()->unreadNotifications as $notification)
+                @include('partials.notification.'.snake_case(class_basename($notification->type)))
+              @empty
+                Sem Notificações
+              @endforelse
             </li>    
           </ul>
         </li>

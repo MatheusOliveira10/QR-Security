@@ -18,6 +18,10 @@ class FrequenciaControllerApi extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function marcarlida()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+    }
     public function index()
     {
         $alunos = Aluno::all()->where('user_id', Auth::id());

@@ -6,10 +6,12 @@ use App\Frequencia;
 use App\Ocorrencia;
 use App\Saida;
 use App\Aluno;
+use App\User;
 use Auth;
 use Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Notifications\Attention;
 
 class FrequenciaController extends Controller
 {
@@ -58,6 +60,13 @@ class FrequenciaController extends Controller
         $frequencia->aluno_id = $request->id;
         $frequencia->ocorrencia_id = $request->ocorrencia_id;
         $frequencia->save();
+
+        $user = Auth::id();
+        $find = User::find($user);
+
+
+        $find->notify(new Attention());        
+
         
         Session::flash('success', 'O Aluno entrou com sucesso!');
 
@@ -211,6 +220,7 @@ class FrequenciaController extends Controller
     public function problema()
     {
         $ocorrencias = Ocorrencia::all();
+
         return view('frequencia.problema', compact('ocorrencias'));
     }
 

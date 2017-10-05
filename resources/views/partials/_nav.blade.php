@@ -22,6 +22,18 @@
         @if (Auth::check())
         
         <li class="dropdown">
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
+          <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
+          <span class="badge">{{count(auth()->user()->notifications)}}</span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="">sdsd</a>
+              <a href="">sdsd</a>
+              <a href="">sdsd</a>
+            </li>    
+          </ul>
+        </li>
+        <li class="dropdown">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">Olá Sr.(a) {{ Auth::user()->name }}
           <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:40px; height:40px; position:absolute; top:5px; left:5px; border-radius:50%;">
           <span class="caret"></span></a>

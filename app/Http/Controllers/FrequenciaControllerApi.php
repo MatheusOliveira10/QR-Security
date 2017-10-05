@@ -49,6 +49,11 @@ class FrequenciaControllerApi extends Controller
                         ->where('aluno_id', $request->aluno_id)
                         ->count();
 
+        $user = Auth::id();
+        $find = User::find($user);
+
+
+
         if($teste < 1)
         {                
         
@@ -57,6 +62,8 @@ class FrequenciaControllerApi extends Controller
         $frequencia->aluno_id = $request->aluno_id;
         $frequencia->created_at = $request->created_at;
         $frequencia->save();
+
+        $find->notify(new Attention());        
 
         return $frequencia;
 

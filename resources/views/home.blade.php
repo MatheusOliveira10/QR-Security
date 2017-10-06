@@ -9,8 +9,8 @@
     <h4 class="text-center animated slideInRight" style="font-size:26px;text-shadow: 2px 2px #000;">O Sistema de Gerenciamento de Alunos mais bonito que você vai ver hoje! rsrs</h4>
   </div>
   <div class="col-md-6">
-    <h2 class="animated slideInLeft">O Que é o QR Security?</h2>
-      <p class="text-justify animated slideInLeft" style="font-size:17px;text-shadow: 2px 2px #000;">
+    <h2 class="animated slideInLeft " style="text-shadow: 2px 2px #000;">O Que é o QR Security?</h2>
+      <p class="text-justify animated slideInLeft" style="font-size:17px; text-shadow: 2px 2px #000;">
       O QR Security é um projeto de conclusão
       de curso (TCC), feito durante o ano de
       2017 na ETEC Pedro Ferreira Alves no

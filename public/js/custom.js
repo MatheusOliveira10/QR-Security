@@ -4,10 +4,11 @@ $(document).ready(function () {
 	$('.vegas-slider').vegas({
 		transition: 'fade', // transição dos slides
 		slides: [
-			{src : '../images/mar.jpg'},
+			{src : '../images/info.jpg'},
+			{src : '../images/cubinhos.jpg'},
 			{src : '../images/poste.jpg'},
-			{src : '../images/vegas.jpg'},
-			{src : '../images/ceu.jpg'}
+			{src : '../images/info2.jpg'},
+			{src : '../images/folha.jpg'}
 		]
 	});
 

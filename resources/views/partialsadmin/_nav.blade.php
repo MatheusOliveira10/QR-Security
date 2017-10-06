@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="../images/logodefinitivoQR.png" alt="logo" width="50" ></img></a>
+      <a class="navbar-brand" href="#"><img src="{{asset('/images/LogoDefinitivoQR.png')}}" alt="logo" width="50" ></img></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
         @if (Auth::check())
         
         <li class="dropdown">
-          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">Olá Sr.(a) {{ Auth::user()->name }}
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">{{ Auth::user()->name }} (Admin)
           <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:40px; height:40px; position:absolute; top:5px; left:5px; border-radius:50%;">
           <span class="caret"></span></a>
           <ul class="dropdown-menu">

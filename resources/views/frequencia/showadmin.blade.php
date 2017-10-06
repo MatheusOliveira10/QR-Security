@@ -1,4 +1,4 @@
-@extends('main')
+@extends('admin')
 
 @section('title', '| Frequência do Aluno')
 

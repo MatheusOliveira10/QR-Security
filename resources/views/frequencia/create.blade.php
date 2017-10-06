@@ -1,28 +1,25 @@
 @extends('admin')
 
-@section('title', '| Trabalho Matheus e Maxwell')
+@section('title', '| Entrada de Alunos')
 
 @section('content')
     
         <div class="col-md-6">
-         <h3>Entrada de Alunos</h3>
-        <hr>
+         <h1 class="page-header">Entrada de Alunos</h1>
         <canvas></canvas>
         <hr>
-        <select id="camera"></select>
+        <select class="form-control" id="camera"></select>
         
         </div>
         <div class="col-md-6">
-                    <div class="col-md-8">
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
                         <input type="hidden" id="created_at" name="created_at" value="">
+                        <input type="hidden" id="ocorrencia" name="ocorrencia_id" value="1">
 
-                </form>
-                                <h1>Alunos:</h1>
+                <h1 class="page-header">Alunos: <button class="btn btn-primary pull-right" id="clear">Limpar</button></h1>
                 <div id="bookmarksResults">
                 </div>
-        </div>
     </div>
     </div>
 @endsection
@@ -53,6 +50,12 @@
             document.querySelector('select').addEventListener('change', function(){
             	decoder.stop().play();
             });
+
+            $("#clear").click(function()
+            {
+                localStorage.clear();
+                fetchBookmarks();
+            })
         </script>
         	
         <script type="text/javascript">

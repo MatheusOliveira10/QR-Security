@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Frequencia;
 use App\Saida;
 use App\Aluno;
+use App\User;
 use Auth;
 use Session;
 use Carbon\Carbon;
@@ -64,6 +65,7 @@ class FrequenciaControllerApi extends Controller
         $frequencia = new Frequencia();
 
         $frequencia->aluno_id = $request->aluno_id;
+        $frequencia->ocorrencia_id = $request->ocorrencia_id;
         $frequencia->created_at = $request->created_at;
         $frequencia->save();
 
@@ -72,7 +74,7 @@ class FrequenciaControllerApi extends Controller
         return $frequencia;
 
         }else{
-            return "Deu Ruim";
+            return "O Aluno já entrou!";
         }
 
     }

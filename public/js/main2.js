@@ -194,7 +194,11 @@ var siteUrl = new Date();
     {
       type: 'POST',
       url: '/api/saida/store',
-      data: {aluno_id:aluno, created_at: siteUrl},
+      data: 
+      {
+        aluno_id:aluno,
+        created_at: siteUrl,
+      },
       success: function(submit)
       {
         console.log(submit);
@@ -239,12 +243,18 @@ function submitF()
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
   var aluno = $("#aluno").val();
+  var ocorrencia = $("#ocorrencia").val();
 
   $.ajax(
     {
       type: 'POST',
       url: '/api/frequencia/store',
-      data: {aluno_id:aluno, created_at: siteUrl},
+      data: 
+      {
+        aluno_id:aluno,
+        created_at: siteUrl,
+        ocorrencia_id: ocorrencia
+      },
       success: function(submit)
       {
         console.log(submit);

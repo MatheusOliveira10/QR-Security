@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Aluno;
+use App\User;
+use App\Ocorrencias;
+use App\Frequencia;
 use Auth;
 use Image;
 
@@ -25,7 +29,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('indexadmin');
+        $alunosdia = Frequencia::all()->where('created_at', '>=', date('Y-m-d'))->count();
+        $ocorrencias = Frequencia::all()->where('ocorrencia_id', '>', 1)->where('created_at', '>=', date('Y-m-d'))->count();        
+        $ultimos = Frequencia::with(['aluno'])->where('created_at', '>=', date('Y-m-d'))->take(5)->get();
+
+        return view('indexadmin', compact('ultimos', 'alunosdia', 'ocorrencias'));
     }
 
     public function perfil()

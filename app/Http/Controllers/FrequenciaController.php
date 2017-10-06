@@ -9,6 +9,7 @@ use App\Aluno;
 use App\User;
 use Auth;
 use Session;
+use Notification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Notifications\Attention;
@@ -61,11 +62,11 @@ class FrequenciaController extends Controller
         $frequencia->ocorrencia_id = $request->ocorrencia_id;
         $frequencia->save();
 
-        $user = Auth::id();
-        $find = User::find($user);
+        $aluno = Aluno::find($request->id);
+        $user = User::find($aluno->user_id);
 
 
-        $find->notify(new Attention($frequencia));        
+        $user->notify(new Attention($frequencia));        
 
         
         Session::flash('success', 'O Aluno entrou com sucesso!');
@@ -88,8 +89,20 @@ class FrequenciaController extends Controller
     public function show(Frequencia $frequencia, $id)
     {
         $frequencia = Frequencia::find($id);
+        $aluno = Aluno::find($frequencia->aluno_id);
+        $ocorrencia = Ocorrencia::find($frequencia->ocorrencia_id);
 
-        return view('frequencia.show', compact('frequencia'));
+        return view('frequencia.show', compact('frequencia', 'aluno', 'ocorrencia'));
+
+    }
+
+    public function showAdmin(Frequencia $frequencia, $id)
+    {
+        $frequencia = Frequencia::find($id);
+        $aluno = Aluno::find($frequencia->aluno_id);
+        $ocorrencia = Ocorrencia::find($frequencia->ocorrencia_id);
+
+        return view('frequencia.showadmin', compact('frequencia', 'aluno', 'ocorrencia'));
 
     }
 
@@ -131,9 +144,12 @@ class FrequenciaController extends Controller
     {
         $events = [];
         $events2 = [];
-        $aluno = Aluno::all()->where('user_id', Auth::id())->first();
-        $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
-        $saidas = Saida::all()->where('aluno_id', $aluno->id);
+        $alunos = Aluno::all()->where('user_id', Auth::id());
+        foreach($alunos as $aluno)
+        {
+            $frequencias = Frequencia::all()->where('aluno_id', $aluno->id);
+            $saidas = Saida::all()->where('aluno_id', $aluno->id);
+        
         foreach ($frequencias as $frequencia) { 
            $crudFieldValue = $frequencia->getOriginal('created_at'); 
 
@@ -148,7 +164,7 @@ class FrequenciaController extends Controller
            $events[]       = [ 
                 'title' => $dataFieldValue, 
                 'start' => $crudFieldValue, 
-                'url'   => route('frequencia.edit', $frequencia->id)
+                'url'   => route('frequencia.show', $frequencia->id)
            ]; 
         } 
 
@@ -166,13 +182,14 @@ class FrequenciaController extends Controller
            $events2[]       = [ 
                 'title' => $dataFieldValue, 
                 'start' => $crudFieldValue, 
-                'url'   => route('saida.edit', $saida->id)
+                'url'   => route('saida.show', $saida->id)
            ]; 
+        }
         } 
 
 
 
-        return view('frequencia.show', compact('events', 'aluno', 'events2'));
+        return view('frequencia.calendario', compact('alunos', 'events', 'aluno', 'events2'));
 
     }
 
@@ -181,6 +198,13 @@ class FrequenciaController extends Controller
         $ocorrencias = Ocorrencia::all();
 
         return view('frequencia.problema', compact('ocorrencias'));
+    }
+
+    public function ocorrencias()
+    {
+        $ocorrencias = Frequencia::with(['aluno'])->where('created_at', '>=', date('Y-m-d'))->get();
+
+        return view('frequencia.ocorrencias', compact('ocorrencias', 'aluno'));
     }
 
     

@@ -13,12 +13,12 @@
 
     var defaults = {
         slide:                   0,
-        delay:                   5000,
+        delay:                   9500,
         loop:                    true,
         preload:                 false,
         preloadImage:            false,
         preloadVideo:            false,
-        timer:                   true,
+        timer:                   false,
         overlay:                 false,
         autoplay:                true,
         shuffle:                 false,
@@ -29,7 +29,7 @@
         firstTransition:         'fade',
         firstTransitionDuration: null,
         transition:              'fade',
-        transitionDuration:      1000,
+        transitionDuration:      2000,
         transitionRegister:      [],
         animation:               null,
         animationDuration:       'auto',

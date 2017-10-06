@@ -46,12 +46,14 @@ Route::prefix('alunos')->group(function() {
 Route::prefix('frequencia')->group(function() {
     Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');
     Route::get('/problema', 'FrequenciaController@problema')->name('frequencia.problema')->middleware('auth:admin');
+    Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
     Route::post('/', ['uses' => 'FrequenciaController@store', 'as' => 'frequencia.store'])->middleware('auth:admin');
+    Route::get('/ocorrencias', ['uses' => 'FrequenciaController@ocorrencias', 'as' => 'frequencia.ocorrencias'])->middleware('auth:admin');
     Route::get('/{id}/edit', ['uses' => 'FrequenciaController@edit', 'as' => 'frequencia.edit']);
     Route::put('/{id}', ['uses' => 'FrequenciaController@update', 'as' => 'frequencia.update']);
     Route::delete('/{id}', ['uses' => 'FrequenciaController@destroy', 'as' => 'frequencia.destroy']);
     Route::get('/{id}', ['uses' => 'FrequenciaController@show', 'as' => 'frequencia.show'])->middleware('auth');
-    Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
+    Route::get('admin/{id}', ['uses' => 'FrequenciaController@showAdmin', 'as' => 'frequencia.showadmin'])->middleware('auth:admin');
     Route::get('/', 'FrequenciaController@index')->name('frequencia.index');
 });
 

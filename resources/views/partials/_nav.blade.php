@@ -21,13 +21,13 @@
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
         
-        <li class="dropdown" id="marcarlida" onclick="marcarlida()">
+        <li class="dropdown" id="marcarlida" onclick="marcarlida('{{count(Auth::user()->unreadNotifications)}}')">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
           <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
-          <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span></a>
+          <span class="badge">{{count(Auth::user()->unreadNotifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              @forelse(auth()->user()->unreadNotifications as $notification)
+              @forelse(Auth::user()->unreadNotifications as $notification)
                 @include('partials.notification.'.snake_case(class_basename($notification->type)))
               @empty
                 <a href="">Sem Notificações</a>
@@ -36,7 +36,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">Olá Sr.(a) {{ Auth::user()->name }}
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative; padding-left:50px;">{{ Auth::user()->name }}
           <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:40px; height:40px; position:absolute; top:5px; left:5px; border-radius:50%;">
           <span class="caret"></span></a>
           <ul class="dropdown-menu">

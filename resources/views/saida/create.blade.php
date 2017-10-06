@@ -1,25 +1,22 @@
 @extends('admin')
 
-@section('title', '| Trabalho Matheus e Maxwell')
+@section('title', '| Saída de Alunos')
 
 @section('content')
     
         <div class="col-md-6">
-         <h3>Saída de Alunos</h3>
-        <hr>
+         <h1 class="page-header">Saída de Alunos</h1>
         <canvas></canvas>
         <hr>
-        <select id="camera"></select>
+        <select class="form-control" id="camera"></select>
         
         </div>
         <div class="col-md-6">
-                    <div class="col-md-8">
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
                         <input type="hidden" id="created_at" name="created_at" value="">
 
-                </form>
-                                <h1>Alunos:</h1>
+                <h1 class="page-header">Alunos: <button class="btn btn-primary pull-right" id="clear">Limpar</button></h1>
                 <div id="bookmarksResults">
                 </div>
         </div>

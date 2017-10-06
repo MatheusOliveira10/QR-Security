@@ -1176,7 +1176,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #40E0D0;
+  border-top: 1px solid #fff;
 }
 .sr-only {
   position: absolute;
@@ -1217,7 +1217,10 @@ h6,
   line-height: 1.1;
   color: inherit;
 }
-h1 small,
+h1 small
+{
+  color: #20b2aa;
+}
 h2 small,
 h3 small,
 h4 small,
@@ -5286,8 +5289,8 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #313030;
+  border: 1px solid #fff;
 }
 .list-group-item:first-child {
   border-top-right-radius: 4px;
@@ -5863,7 +5866,7 @@ button.list-group-item-danger.active:focus {
   padding: 19px;
   margin-bottom: 20px;
   background-color: #313030;
-  color: #20b2aa;
+  color: #fff;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);

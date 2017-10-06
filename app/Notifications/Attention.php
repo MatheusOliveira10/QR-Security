@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Carbon\Carbon;
 use App\Aluno;
+use App\User;
 
 class Attention extends Notification
 {
@@ -44,11 +45,14 @@ class Attention extends Notification
      */
     public function toDatabase($notifiable)
     {
+        $aluno = Aluno::find($this->frequencia->aluno_id);
+        $notifiable = User::find($aluno->user_id);
         return [
             'frequencia' => $this->frequencia,
-            'user' => $notifiable,
-            'aluno' => Aluno::find($this->frequencia->aluno_id)
+            'aluno' => Aluno::find($this->frequencia->aluno_id),
+            'user' => $notifiable
         ];
+
     }
 
     public function toArray($notifiable)

@@ -189,6 +189,7 @@ var siteUrl = new Date();
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
   var aluno = $("#aluno").val();
+  var foto = $("#foto");
 
   $.ajax(
     {
@@ -202,6 +203,7 @@ var siteUrl = new Date();
       success: function(submit)
       {
         console.log(submit);
+        foto.val() = submit.foto;
       },
     });
 }
@@ -244,6 +246,8 @@ function submitF()
 
   var aluno = $("#aluno").val();
   var ocorrencia = $("#ocorrencia").val();
+  var foto = $("#foto");
+
 
   $.ajax(
     {
@@ -258,6 +262,7 @@ function submitF()
       success: function(submit)
       {
         console.log(submit);
+        foto.val() = submit.foto;
       },
     });
 }

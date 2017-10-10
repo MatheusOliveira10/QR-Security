@@ -47,11 +47,11 @@
             <li role="separator" class="divider"></li>
             <li><a href="{{ url('admin/perfil') }}"><i class="fa fa-btn fa-user fa-fw"></i>&nbsp;Perfil</a></li>
             <li>
-            <a href="{{ route('logout') }}"
+            <a href="{{ route('admin.logout') }}"
                  onclick="event.preventDefault();
                  document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out fa-fw"></i>&nbsp;Logout
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="get" style="display: none;">
             {{ csrf_field() }}
             </form>
             </li> 

@@ -42,12 +42,12 @@
           <ul class="dropdown-menu">
             <li><a href="{{ url('/perfil') }}"><i class="fa fa-btn fa-user"></i>  Perfil</a></li>
             <li>
-            <a href="{{ route('logout') }}"
+            <a href="{{ route('user.logout') }}"
                  onclick="event.preventDefault();
                  document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i>
                  Logout
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('user.logout') }}" method="get" style="display: none;">
             {{ csrf_field() }}
             </form>
             </li> 

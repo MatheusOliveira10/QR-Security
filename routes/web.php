@@ -18,6 +18,8 @@ Route::get('/phpinfo', function () {
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
 
 Auth::routes();
 
@@ -31,6 +33,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/perfil', 'AdminController@avatar');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@Login')->name('admin.login.submit');
+    Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
 Route::prefix('alunos')->group(function() {

@@ -4,6 +4,7 @@
 {!! Html::script('js/qrcodelib.js') !!}
 {!! Html::script('js/filereader.js') !!}
 {!! Html::script('js/main.js') !!}
+{!! Html::script('js/bootstrap.js') !!}
 {!! Html::script('js/mainjquery.js') !!}
 {!! Html::script('js/DecoderWorker.js') !!}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

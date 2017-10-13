@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function() {
 Route::prefix('alunos')->group(function() {
     Route::get('/create', 'AlunoController@create')->name('alunos.create');
     Route::get('/{id}', ['uses' => 'AlunoController@show', 'as' => 'alunos.show']);
+    Route::get('/admin/{id}', ['uses' => 'AlunoController@showAdmin', 'as' => 'alunos.showadmin'])->middleware('auth:admin');
     Route::post('/', ['uses' => 'AlunoController@store', 'as' => 'alunos.store']);
     Route::get('/{id}/edit', ['uses' => 'AlunoController@edit', 'as' => 'alunos.edit']);
     Route::put('/{id}', ['uses' => 'AlunoController@update', 'as' => 'alunos.update']);
@@ -56,7 +57,7 @@ Route::prefix('frequencia')->group(function() {
     Route::put('/{id}', ['uses' => 'FrequenciaController@update', 'as' => 'frequencia.update']);
     Route::delete('/{id}', ['uses' => 'FrequenciaController@destroy', 'as' => 'frequencia.destroy']);
     Route::get('/{id}', ['uses' => 'FrequenciaController@show', 'as' => 'frequencia.show'])->middleware('auth');
-    Route::get('admin/{id}', ['uses' => 'FrequenciaController@showAdmin', 'as' => 'frequencia.showadmin'])->middleware('auth:admin');
+    Route::get('/admin/{id}', ['uses' => 'FrequenciaController@showAdmin', 'as' => 'frequencia.showadmin'])->middleware('auth:admin');
     Route::get('/', 'FrequenciaController@index')->name('frequencia.index');
 });
 

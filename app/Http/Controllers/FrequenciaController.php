@@ -49,7 +49,7 @@ class FrequenciaController extends Controller
     public function store(Request $request)
     {
         $teste = Frequencia::all()
-                        ->where('created_at', '<=', Carbon::now())
+                        ->where('created_at', '>=', Carbon::now()->toDateString())
                         ->where('aluno_id', $request->id)
                         ->count();
 

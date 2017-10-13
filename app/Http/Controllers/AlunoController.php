@@ -78,8 +78,23 @@ class AlunoController extends Controller
     public function show($id)
     {
         $aluno = Aluno::find($id);
+        $pai = User::find($aluno->id);
         $frequencia = Frequencia::all()->where('aluno_id', $id)->count();
-        return view('alunos.show', compact('aluno', 'frequencia'));
+        return view('alunos.show', compact('pai', 'aluno', 'frequencia'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdmin($id)
+    {
+        $aluno = Aluno::find($id);
+        $pai = User::find($aluno->user_id);
+        $frequencia = Frequencia::all()->where('aluno_id', $id)->count();
+        return view('alunos.showadmin', compact('pai', 'aluno', 'frequencia'));
     }
 
     /**

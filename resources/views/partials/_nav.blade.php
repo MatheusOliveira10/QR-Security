@@ -27,7 +27,7 @@
           <span class="badge">{{count(Auth::user()->unreadNotifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              @forelse(Auth::user()->unreadNotifications as $notification)
+              @forelse(Auth::user()->Notifications as $notification)
                 @include('partials.notification.'.snake_case(class_basename($notification->type)))
               @empty
                 <a href="">Sem Notificações</a>

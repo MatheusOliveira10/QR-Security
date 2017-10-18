@@ -39,11 +39,13 @@ function saveBookmark(e){
 
   var siteName = document.getElementById('aluno').value;
   var request = $.get('/saida/fetch/' + siteName);
+  var foto = document.getElementById('foto');
   var nome = request.done(function(response){
       
     
     console.log(response);
       nome = response.nome;
+      foto.value = response.foto;
       console.log(nome);
 
 
@@ -119,11 +121,14 @@ function fetchBookmarks(){
     var id = bookmarks[i].aluno_id;
     var name = bookmarks[i].name;
     var url = bookmarks[i].created_at;
+    var foto = document.getElementById('foto').value;
     var index = i;
 
     bookmarksResults.innerHTML += '<div class="well">'+
-                                  '<h3>' + id + ' - ' + name+
-                                  '<a onclick="deleteBookmark(\''+id+'\')" class="pull-right btn btn-danger" href="#">Ignorar Presença</a> ' +
+                                  '<h3>' +
+                                  '<img style="height: 125px; width: 100px;" src="../uploads/alunos/' + foto + '">'+                                
+                                  ' RM: ' + id + ' Nome: ' + name +
+                                  '&nbsp; <a onclick="deleteBookmark(\''+id+'\')" class="btn btn-danger" href="#">Ignorar Presença</a> ' +
                                   '</h3>'+
                                   '</div>';
                                   
@@ -189,7 +194,6 @@ var siteUrl = new Date();
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
   var aluno = $("#aluno").val();
-  var foto = $("#foto");
 
   $.ajax(
     {
@@ -246,7 +250,7 @@ function submitF()
 
   var aluno = $("#aluno").val();
   var ocorrencia = $("#ocorrencia").val();
-  var foto = $("#foto");
+  var foto = $("#foto").val();
 
 
   $.ajax(
@@ -261,8 +265,8 @@ function submitF()
       },
       success: function(submit)
       {
+        foto = submit.foto;
         console.log(submit);
-        foto.val() = submit.foto;
       },
     });
 }

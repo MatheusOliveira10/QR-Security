@@ -6,6 +6,8 @@ use App\Saida;
 use App\Aluno;
 use Response;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Session;
 
 class SaidaController extends Controller
 {
@@ -37,13 +39,35 @@ class SaidaController extends Controller
      */
     public function store(Request $request)
     {
+        $teste = Saida::all()
+                        ->where('created_at', '>=', Carbon::now()->toDateString())
+                        ->where('aluno_id', $request->id)
+                        ->count();
+
+        if($teste < 1)
+        {                
+        
         $saida = new Saida();
 
+        $saida->aluno_id = $request->id;
         $saida->save();
 
+        //Adicionar mais arquivos de notificação
+        //$aluno = Aluno::find($request->id);
+        //$user = User::find($aluno->user_id);
+
+
+        //$user->notify(new Attention($frequencia));        
+
+        
         Session::flash('success', 'O Aluno saiu com sucesso!');
 
-        return redirect()->route('saida.create');
+        return redirect()->route('frequencia.problemaout');
+        }else{
+        Session::flash('success', 'O Aluno já saiu hoje!');
+
+        return redirect()->route('frequencia.problemaout');
+        }
 
     }
 

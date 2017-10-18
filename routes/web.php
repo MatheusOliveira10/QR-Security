@@ -50,6 +50,7 @@ Route::prefix('alunos')->group(function() {
 Route::prefix('frequencia')->group(function() {
     Route::get('/create', 'FrequenciaController@create')->name('frequencia.create')->middleware('auth:admin');
     Route::get('/problema', 'FrequenciaController@problema')->name('frequencia.problema')->middleware('auth:admin');
+    Route::get('/problema/saida', 'FrequenciaController@problemaOut')->name('frequencia.problemaout')->middleware('auth:admin');
     Route::get('/calendar', 'FrequenciaController@calendario')->name('frequencia.calendar')->middleware('auth');
     Route::post('/', ['uses' => 'FrequenciaController@store', 'as' => 'frequencia.store'])->middleware('auth:admin');
     Route::get('/ocorrencias', ['uses' => 'FrequenciaController@ocorrencias', 'as' => 'frequencia.ocorrencias'])->middleware('auth:admin');
@@ -63,7 +64,7 @@ Route::prefix('frequencia')->group(function() {
 
 Route::prefix('saida')->group(function() {
     Route::get('/', ['uses' => 'SaidaController@index', 'as' => 'saida.index'])->middleware('auth:admin');
-    Route::post('/{id}', ['uses' => 'SaidaController@store', 'as' => 'saida.store'])->middleware('auth:admin');
+    Route::post('/', ['uses' => 'SaidaController@store', 'as' => 'saida.store'])->middleware('auth:admin');
     Route::get('/{id}/edit', ['uses' => 'SaidaController@edit', 'as' => 'saida.edit']);
     Route::put('/{id}', ['uses' => 'SaidaController@update', 'as' => 'saida.update']);
     Route::delete('/{id}', ['uses' => 'SaidaController@destroy', 'as' => 'saida.destroy']);

@@ -15,6 +15,7 @@
 
                         <input type="hidden" id="aluno" name="aluno_id" value="">
                         <input type="hidden" id="created_at" name="created_at" value="">
+                        <input type="hidden" id="foto" name="foto" value="">
 
                 <h1 class="page-header">Alunos: <button class="btn btn-primary pull-right" id="clear">Limpar</button></h1>
                 <div id="bookmarksResults">

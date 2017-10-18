@@ -10,6 +10,7 @@ use Auth;
 use Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Notifications\Attention;
 
 class FrequenciaControllerApi extends Controller
 {
@@ -54,14 +55,15 @@ class FrequenciaControllerApi extends Controller
                         ->where('aluno_id', $request->aluno_id)
                         ->count();
 
-        $user = Auth::id();
-        $find = User::find($user);
 
 
 
         if($teste < 1)
         {                
         
+        $aluno = Aluno::find($request->aluno_id);
+        $find = User::find($aluno->user_id);
+
         $frequencia = new Frequencia();
 
         $frequencia->aluno_id = $request->aluno_id;
@@ -69,7 +71,7 @@ class FrequenciaControllerApi extends Controller
         $frequencia->created_at = $request->created_at;
         $frequencia->save();
 
-        $find->notify(new Attention());        
+        $find->notify(new Attention($frequencia));        
 
         return $frequencia;
 

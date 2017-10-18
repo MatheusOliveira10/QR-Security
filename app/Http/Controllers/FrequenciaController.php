@@ -200,6 +200,13 @@ class FrequenciaController extends Controller
         return view('frequencia.problema', compact('ocorrencias'));
     }
 
+    public function problemaOut()
+    {
+        $ocorrencias = Ocorrencia::all();
+
+        return view('frequencia.problemasaida', compact('ocorrencias'));
+    }
+
     public function ocorrencias()
     {
         $ocorrencias = Frequencia::with(['aluno'])->where('created_at', '>=', date('Y-m-d'))->get();

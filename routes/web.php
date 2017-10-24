@@ -84,3 +84,5 @@ Route::get('/teste', function () {
 Route::get('/marcarlida', function(){
     auth()->user()->unreadNotifications->markAsRead();
 });
+
+Route::get('/api/count', 'FrequenciaController@count');

@@ -214,5 +214,12 @@ class FrequenciaController extends Controller
         return view('frequencia.ocorrencias', compact('ocorrencias', 'aluno'));
     }
 
+    public function count()
+    {
+        $id = Auth::id();
+        $user = User::find($id);
+        $count = $user->unreadNotifications->count();
+        return $count;
+    }
     
 }

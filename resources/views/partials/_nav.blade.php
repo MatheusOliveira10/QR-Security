@@ -24,7 +24,7 @@
         <li class="dropdown" id="marcarlida" onclick="marcarlida('{{count(Auth::user()->unreadNotifications)}}')">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
           <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
-          <span class="badge">{{count(Auth::user()->unreadNotifications)}}</span></a>
+          <span id="count" class="badge">{{count(Auth::user()->unreadNotifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
               @forelse(Auth::user()->Notifications as $notification)

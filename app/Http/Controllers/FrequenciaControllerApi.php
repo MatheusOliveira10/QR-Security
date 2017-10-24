@@ -219,5 +219,12 @@ class FrequenciaControllerApi extends Controller
 
     }
 
-    
-}
+    public function count()
+    {
+        $id = Auth::guard();
+        dd ($id);
+        $user = User::find($id);
+        $count = $user->unreadNotifications;
+        return $count;
+    }
+}    

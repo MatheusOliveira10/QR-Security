@@ -22,3 +22,9 @@
   @endforeach
 </div>
 @endsection
+
+@section('scripts')
+  <script type="text/javascript">
+    count()
+  </script>  
+@endsection

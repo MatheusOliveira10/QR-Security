@@ -4,7 +4,7 @@
 {!! Html::script('js/webcodecamjs.js') !!}
 {!! Html::script('js/qrcodelib.js') !!}
 {!! Html::script('js/filereader.js') !!}
-{!! Html::script('js/main.js') !!}
+{!! Html::script('js/main2.js') !!}
 {!! Html::script('js/DecoderWorker.js') !!}
 {!! Html::script('js/jquery.dataTables.js') !!}
 {!! Html::script('js/vegas.js') !!}

@@ -1,3 +1,4 @@
+setInterval("count()", 30000);
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
@@ -269,4 +270,16 @@ function submitF()
         console.log(submit);
       },
     });
+}
+
+function count()
+{
+  var request = $.get('/api/count');
+  var span = document.getElementById('count');
+
+  request.done(function (response)
+  {
+    span.innerHTML = response;
+  });
+  
 }

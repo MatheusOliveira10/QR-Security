@@ -48,5 +48,5 @@
   <li>Não faremos cadastro de salas pois um json já foi preparado para popular o banco automaticamente no momento do migrate;</li>
   <li>Caso o botão Login Admin não estiver funcionando, apague no navegador os cookies gerados pelo laravel, e o site voltará ao normal (token e session);</li>
   <li>Para testes, necessário WebCam e um código QR que remete ao RM do aluno cadastrado;</li>
-  <li>Há um bug que foi consertado porém um merge desfez a correção, quando um usuário é cadastrado pelo administrador, a sessão se fecha, deslogando o admin.</li>
+  <li>Notificações para saída do aluno estão ainda sendo feitas.</li>
 </ul>

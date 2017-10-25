@@ -215,7 +215,7 @@ var siteUrl = new Date();
 
 function submitF()
 {
-    var siteUrl = new Date();
+  var siteUrl = new Date();
   var dia = siteUrl.getDate();
   var mes = siteUrl.getMonth()+1;
   var ano = siteUrl.getFullYear();
@@ -253,6 +253,9 @@ function submitF()
   var ocorrencia = $("#ocorrencia").val();
   var foto = $("#foto").val();
 
+  //var valor = 1;
+
+  //var x = valor == 1 ? '/api/frequencia/store' : '/api/saida/store'
 
   $.ajax(
     {

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Saida;
 use App\Aluno;
+use App\User;
 use Response;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
+use App\Notifications\Out;
 
 class SaidaController extends Controller
 {
@@ -52,12 +54,11 @@ class SaidaController extends Controller
         $saida->aluno_id = $request->id;
         $saida->save();
 
-        //Adicionar mais arquivos de notificação
-        //$aluno = Aluno::find($request->id);
-        //$user = User::find($aluno->user_id);
+        $aluno = Aluno::find($request->id);
+        $user = User::find($aluno->user_id);
 
 
-        //$user->notify(new Attention($frequencia));        
+        $user->notify(new Out($saida));        
 
         
         Session::flash('success', 'O Aluno saiu com sucesso!');
@@ -77,9 +78,13 @@ class SaidaController extends Controller
      * @param  \App\Saida  $saida
      * @return \Illuminate\Http\Response
      */
-    public function show(Saida $saida)
+    public function show(Saida $saida, $id)
     {
-        //
+        $saida = Saida::find($id);
+        $aluno = Aluno::find($saida->aluno_id);
+
+        return view('saida.show', compact('saida', 'aluno'));
+
     }
 
     /**

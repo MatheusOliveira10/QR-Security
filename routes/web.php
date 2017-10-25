@@ -68,7 +68,7 @@ Route::prefix('saida')->group(function() {
     Route::get('/{id}/edit', ['uses' => 'SaidaController@edit', 'as' => 'saida.edit']);
     Route::put('/{id}', ['uses' => 'SaidaController@update', 'as' => 'saida.update']);
     Route::delete('/{id}', ['uses' => 'SaidaController@destroy', 'as' => 'saida.destroy']);
-    Route::get('/', ['uses' => 'SaidaController@show', 'as' => 'saida.show'])->middleware('auth');
+    Route::get('/{id}', ['uses' => 'SaidaController@show', 'as' => 'saida.show'])->middleware('auth');
     Route::get('/fetch/{id}', ['uses' => 'SaidaController@fetch', 'as' => 'saida.fetch']);
     Route::post('/post', ['uses' => 'SaidaController@post', 'as' => 'saida.post']);
     Route::get('/create', 'SaidaController@create')->name('saida.create')->middleware('auth:admin');

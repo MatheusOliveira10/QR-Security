@@ -13,12 +13,6 @@
             {{csrf_field()}}
                 <h4>RM:</h4>
                 <input type="number" class="form-control" id="id" name="id" maxlength="5" value="">
-                <h4>Selecionar ocorrência:</h4>
-                    <select name="ocorrencia_id" class="form-control select2-multi" id="sala">
-                        @foreach($ocorrencias as $ocorrencia)
-                        <option value="{{$ocorrencia->id}}">{{$ocorrencia->nome}}</option>
-                        @endforeach
-                    </select>
                 </br></br>
                 <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in"></i>&nbsp;Liberar</button>
             </form>

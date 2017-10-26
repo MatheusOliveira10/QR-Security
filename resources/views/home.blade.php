@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| Trabalho Matheus e Maxwell')
+@section('title', '| Home')
 
 @section('content')
   <div class="container jumbotron">

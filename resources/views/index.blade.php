@@ -1,5 +1,7 @@
 @extends('main')
 
+@section('title', '| ' .$nome)
+
 @section('content')
 
 <div class="container col-md-6">

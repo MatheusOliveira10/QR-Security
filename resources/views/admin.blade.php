@@ -4,7 +4,7 @@
     @include('partialsadmin._head')
   </head>
   
-  <body>
+  <body class="grey">
 
     @include('partialsadmin._nav')    
 

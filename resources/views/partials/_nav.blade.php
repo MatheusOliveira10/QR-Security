@@ -16,7 +16,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('home') ? "active" : "" }}"><a href="/home">Home</a></li>
-        <li class="{{ Request::is('frequencia/calendar') ? "active" : "" }}"><a href="/frequencia/calendar">Frequência do Aluno</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())

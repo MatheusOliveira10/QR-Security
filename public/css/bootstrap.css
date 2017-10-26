@@ -6821,3 +6821,14 @@ width: 70%;
   position: absolute;
 width: 3%;
 }
+
+.well2{
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}

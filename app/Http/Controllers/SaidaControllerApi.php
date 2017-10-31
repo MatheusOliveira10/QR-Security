@@ -6,9 +6,11 @@ use App\Frequencia;
 use App\Saida;
 use App\Aluno;
 use Auth;
+use App\User;
 use Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Notifications\Out;
 
 class SaidaControllerApi extends Controller
 {
@@ -26,22 +28,29 @@ class SaidaControllerApi extends Controller
     
     public function store(Request $request)
     {
-        $teste = Frequencia::with('saida')
+        $teste = Frequencia::all()
                  ->where('aluno_id', $request->aluno_id)
                  ->where('saida_id', null)
-                 ->get();
+                 ->first();
 
-        $frequencia = Frequencia::find($teste->id);
+
+        $aluno = Aluno::find($request->aluno_id);
+        $find = User::find($aluno->user_id);
 
         if($teste != null)
         {
             $aluno = Aluno::find($request->aluno_id);
+            $frequencia = Frequencia::find($teste->id);
             $saida = new Saida();
 
             $saida->aluno_id = $request->aluno_id;
             $saida->created_at = $request->created_at;
-
             $saida->save();
+
+            $frequencia->saida()->associate($saida);
+            $frequencia->save();
+
+            $find->notify(new Out($saida));        
 
             //$frequencia->saida = $saida->id;
             //$frequencia->save();

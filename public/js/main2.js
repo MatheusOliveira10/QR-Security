@@ -296,7 +296,15 @@ function count()
 
   request.done(function (response)
   {
-    span.innerHTML = response;
+    if(response > 0 && $('.badge').css('display') == "none"){
+      $('.badge').fadeIn()
+      $('.badge').html(response);
+    }else if(response > 0 && $('.badge').css('display') == "inline-block"){
+      span.innerHTML = response;     
+    }else if(response == 0 && $('.badge').css('display') == "inline-block"){
+      $('.badge').fadeOut()
+      $('.badge').html(response);
+    }
   });
   
 }

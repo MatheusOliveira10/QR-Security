@@ -17,7 +17,7 @@
             <input type="hidden" id="ocorrencia" name="ocorrencia_id" value="1">
             <input type="hidden" id="foto" name="foto" value="">
             
-            <h1 class="page-header">Alunos: <button class="btn btn-primary pull-right" id="clear">Limpar</button>
+            <h1 class="page-header animated slideInRight" id="alunos">Alunos: <button class="btn btn-primary pull-right" id="clear">Limpar</button>
             &nbsp;<button class="btn btn-primary pull-right" style="margin-right: 5px;" id="frequencia">Mudar para Saída</button></h1>
         <div id="bookmarksResults"></div>
     </div>
@@ -56,7 +56,7 @@
                     $('#tipo').val($('#tipo').val() == 1 ? 2 : 1);
                     if (estado) {
                         $('body').animate({
-                            backgroundColor: "#003180",
+                            backgroundColor: "rgba(0, 26, 102,0.85)",
                             color: "#fff"
                         });
                         $('hr').animate({
@@ -69,6 +69,7 @@
                         
                         $('#mudar').addClass('slideInLeft');
                         $('#manual').addClass('slideInLeft');
+                        $('#alunos').addClass('slideInRight');
 
                         estado = false;
 
@@ -89,7 +90,8 @@
                         $('#sala2').fadeIn();
                         $('#mudar').addClass('slideInLeft');
                         $('#manual').addClass('slideInLeft');
-
+                        $('#alunos').addClass('slideInRight');
+                        
                         estado = true;
                     }
                     //$('body').css('background-color', $('body').css('background-color') == 'rgb(49, 48, 48)' ? 'rgba(48,178,170, 0.5)' : 'rgb(49, 48, 48)')

@@ -26,23 +26,30 @@ class SaidaControllerApi extends Controller
     
     public function store(Request $request)
     {
-        $teste = Saida::all()
-                ->where('created_at', '>=', date('Y-m-d'))
-                ->where('aluno_id', $request->aluno_id)
-                ->count();
+        $teste = Frequencia::with('saida')
+                 ->where('aluno_id', $request->aluno_id)
+                 ->where('saida_id', null)
+                 ->get();
 
-        if($teste < 1)
+        $frequencia = Frequencia::find($teste->id);
+
+        if($teste != null)
         {
+            $aluno = Aluno::find($request->aluno_id);
+            $saida = new Saida();
 
-        $saida = new Saida();
+            $saida->aluno_id = $request->aluno_id;
+            $saida->created_at = $request->created_at;
 
-        $saida->aluno_id = $request->aluno_id;
-        $saida->created_at = $request->created_at;
-        $saida->save();
+            $saida->save();
 
-        return $saida;
+            //$frequencia->saida = $saida->id;
+            //$frequencia->save();
+
+            return "O Aluno ". $aluno->nome . " saiu com sucesso!";
         }else{
-            return "Opa fion, vc já saiu meu parssa!";
+            $aluno = Aluno::find($request->aluno_id);
+            return "O Aluno ". $aluno->nome . " já saiu!";
         }    
     }
 

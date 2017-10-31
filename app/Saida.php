@@ -12,4 +12,9 @@ class Saida extends Model
     {
         return $this->belongsTo('App\Aluno');
     }
+
+    public function frequencia()
+    {
+        return $this->hasOne('App\Frequencia');
+    }
 }

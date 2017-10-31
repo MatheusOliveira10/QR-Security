@@ -73,10 +73,11 @@ class FrequenciaControllerApi extends Controller
 
         $find->notify(new Attention($frequencia));        
 
-        return $frequencia;
+        return "O Aluno ". $aluno->nome . " entrou com sucesso!";
 
         }else{
-            return "O Aluno já entrou!";
+        $aluno = Aluno::find($request->aluno_id);
+            return "O Aluno ". $aluno->nome . " já entrou!";
         }
 
     }

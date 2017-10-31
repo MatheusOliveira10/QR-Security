@@ -15,4 +15,9 @@ class Frequencia extends Model
     {
         return $this->belongsTo('App\Ocorrencias');
     }
+
+    public function saida()
+    {
+        return $this->belongsTo('App\Saida');
+    }
 }

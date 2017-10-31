@@ -130,7 +130,6 @@ function fetchBookmarks(){
                                   '<h3>' +
                                   '<img style="height: 125px; width: 100px;" src="../uploads/alunos/' + foto + '">'+                                
                                   ' RM: ' + id + ' Nome: ' + name +
-                                  '&nbsp; <a onclick="deleteBookmark(\''+id+'\')" class="btn btn-danger" href="#">Ignorar Presença</a> ' +
                                   '</h3>'+
                                   '</div>').fadeIn(1000);
                                   
@@ -159,7 +158,7 @@ function validateForm(siteName, siteUrl){
   return true;
 }
 
-function submitS()
+function submit2()
 {
 var siteUrl = new Date();
   var dia = siteUrl.getDate();
@@ -195,26 +194,36 @@ var siteUrl = new Date();
 
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
-  var aluno = $("#aluno").val();
+  var aluno = $("#aluno2").val();
+  var ocorrencia = $("#ocorrencia").val();
+  var tipo = $('#tipo').val();
+  var x = '';
 
+  if (tipo == 1)
+  {
+    x = '/api/frequencia/store';
+  }else{
+    x = '/api/saida/store';
+  }
   $.ajax(
     {
       type: 'POST',
-      url: '/api/saida/store',
+      url: x,
       data: 
       {
         aluno_id:aluno,
+        ocorrencia_id: ocorrencia,
         created_at: siteUrl,
       },
       success: function(submit)
       {
         console.log(submit);
-        foto.val() = submit.foto;
+        alert (submit);
       },
     });
 }
 
-function submitF()
+function submit()
 {
   var siteUrl = new Date();
   var dia = siteUrl.getDate();

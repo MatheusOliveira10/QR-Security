@@ -17,6 +17,8 @@ class CreateSaidasTable extends Migration
             $table->increments('id');
             $table->integer('aluno_id')->unsigned();
             $table->foreign('aluno_id')->references('id')->on('alunos');
+            //$table->integer('frequencia_id')->unsigned()->nullable();
+            //$table->foreign('frequencia_id')->references('id')->on('frequencias');
             $table->timestamps();
         });
     }

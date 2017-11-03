@@ -1,4 +1,5 @@
 setInterval("count()", 30000);
+setInterval("session()", 5000);
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
@@ -113,11 +114,11 @@ function fetchBookmarks(){
   // Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Get output id
-  var bookmarksResults = document.getElementById('bookmarksResults');
+  var bookmarksResults = $('#bookmarksResults');
   
 
   // Build output
-  bookmarksResults.innerHTML = '';
+  bookmarksResults.html('');
   for(var i = 0; i < bookmarks.length; i++){
     var id = bookmarks[i].aluno_id;
     var name = bookmarks[i].name;
@@ -125,13 +126,12 @@ function fetchBookmarks(){
     var foto = document.getElementById('foto').value;
     var index = i;
 
-    bookmarksResults.innerHTML += '<div class="well">'+
+    bookmarksResults.html('<div class="well" id="student">'+
                                   '<h3>' +
                                   '<img style="height: 125px; width: 100px;" src="../uploads/alunos/' + foto + '">'+                                
                                   ' RM: ' + id + ' Nome: ' + name +
-                                  '&nbsp; <a onclick="deleteBookmark(\''+id+'\')" class="btn btn-danger" href="#">Ignorar Presença</a> ' +
                                   '</h3>'+
-                                  '</div>';
+                                  '</div>').fadeIn(1000);
                                   
 
   var objetoDados = document.getElementById('created_at');
@@ -158,7 +158,7 @@ function validateForm(siteName, siteUrl){
   return true;
 }
 
-function submitS()
+function submit2()
 {
 var siteUrl = new Date();
   var dia = siteUrl.getDate();
@@ -194,26 +194,36 @@ var siteUrl = new Date();
 
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
-  var aluno = $("#aluno").val();
+  var aluno = $("#aluno2").val();
+  var ocorrencia = $("#ocorrencia").val();
+  var tipo = $('#tipo').val();
+  var x = '';
 
+  if (tipo == 1)
+  {
+    x = '/api/frequencia/store';
+  }else{
+    x = '/api/saida/store';
+  }
   $.ajax(
     {
       type: 'POST',
-      url: '/api/saida/store',
+      url: x,
       data: 
       {
         aluno_id:aluno,
+        ocorrencia_id: ocorrencia,
         created_at: siteUrl,
       },
       success: function(submit)
       {
         console.log(submit);
-        foto.val() = submit.foto;
+        alert (submit);
       },
     });
 }
 
-function submitF()
+function submit()
 {
   var siteUrl = new Date();
   var dia = siteUrl.getDate();
@@ -252,15 +262,19 @@ function submitF()
   var aluno = $("#aluno").val();
   var ocorrencia = $("#ocorrencia").val();
   var foto = $("#foto").val();
+  var tipo = $('#tipo').val();
+  var x = '';
 
-  //var valor = 1;
-
-  //var x = valor == 1 ? '/api/frequencia/store' : '/api/saida/store'
-
+  if (tipo == 1)
+  {
+    x = '/api/frequencia/store';
+  }else{
+    x = '/api/saida/store';
+  }
   $.ajax(
     {
       type: 'POST',
-      url: '/api/frequencia/store',
+      url: x,
       data: 
       {
         aluno_id:aluno,
@@ -282,7 +296,20 @@ function count()
 
   request.done(function (response)
   {
-    span.innerHTML = response;
+    if(response > 0 && $('.badge').css('display') == "none"){
+      $('.badge').fadeIn()
+      $('.badge').html(response);
+    }else if(response > 0 && $('.badge').css('display') == "inline-block"){
+      span.innerHTML = response;     
+    }else if(response == 0 && $('.badge').css('display') == "inline-block"){
+      $('.badge').fadeOut()
+      $('.badge').html(response);
+    }
   });
   
+}
+
+function session()
+{
+  $('.alert').fadeOut(1000);
 }

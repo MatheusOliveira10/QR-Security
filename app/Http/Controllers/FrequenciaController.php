@@ -37,7 +37,9 @@ class FrequenciaController extends Controller
      */
     public function create()
     {
-        return view('frequencia.create');
+        $ocorrencias = Ocorrencia::all();
+        
+        return view('frequencia.create', compact('ocorrencias'));
     }
 
     /**

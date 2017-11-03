@@ -1,5 +1,8 @@
-function marcarlida(notificationCount){
-    if(notificationCount !== 0){
-    $.get('/marcarlida');
-    }
+function marcarlida(){
+{
+  var request = $.get('/marcarlida');
+  request.done(function(response){
+     $('.badge').fadeOut();
+  });
+}
 }

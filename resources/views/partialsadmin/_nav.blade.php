@@ -20,10 +20,7 @@
         <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Checagens
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Entrada</a></li>
-          <li class="{{ Request::is('saida/create') ? "active" : "" }}"><a href="/saida/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp;Checar Saída</a></li>
-          <li class="{{ Request::is('frequencia/problema') ? "active" : "" }}"><a href="/frequencia/problema"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>&nbsp;Problemas Entrada</a></li>
-          <li class="{{ Request::is('frequencia/problema/saida') ? "active" : "" }}"><a href="/frequencia/problema/saida"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>&nbsp;Problemas Saída</a></li>
+          <li class="{{ Request::is('frequencia/create') ? "active" : "" }}"><a href="/frequencia/create"><i class="fa fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp; Entrada e Saída</a></li>
         </ul>
         <li class="dropdown">
         <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Cadastros
@@ -42,10 +39,6 @@
           <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:40px; height:40px; position:absolute; top:5px; left:5px; border-radius:50%;">
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{ route('frequencia.create') }}">Checar Entrada</a></li>
-            <li><a href="{{ route('saida.create') }}">Checar Saída</a></li>
-            <li><a href="{{ route('alunos.index') }}">Alunos</a></li>
-            <li role="separator" class="divider"></li>
             <li><a href="{{ url('admin/perfil') }}"><i class="fa fa-btn fa-user fa-fw"></i>&nbsp;Perfil</a></li>
             <li>
             <a href="{{ route('admin.logout') }}"

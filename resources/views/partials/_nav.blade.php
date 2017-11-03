@@ -16,18 +16,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('home') ? "active" : "" }}"><a href="/home">Home</a></li>
-        <li class="{{ Request::is('frequencia/calendar') ? "active" : "" }}"><a href="/frequencia/calendar">Frequência do Aluno</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
         
-        <li class="dropdown" id="marcarlida" onclick="marcarlida('{{count(Auth::user()->unreadNotifications)}}')">
-          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
+        <li class="dropdown" id="marcarlida" onclick="marcarlida()">
+          <a id="not" href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative">
           <i class="fa fa-fw fa-globe"></i>&nbsp;Notificações
           <span id="count" class="badge">{{count(Auth::user()->unreadNotifications)}}</span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              @forelse(Auth::user()->Notifications as $notification)
+              @forelse(Auth::user()->unreadNotifications as $notification)
                 @include('partials.notification.'.snake_case(class_basename($notification->type)))
               @empty
                 <a href="">Sem Notificações</a>

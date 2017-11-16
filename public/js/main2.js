@@ -1,5 +1,5 @@
-setInterval("count()", 30000);
-setInterval("session()", 5000);
+setInterval("count()", 15000);
+setInterval("session()", 2000);
 // Save Bookmark
 function saveBookmark(e){
   // Get form values

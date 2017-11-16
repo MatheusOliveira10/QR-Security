@@ -48,13 +48,13 @@
             Clube Corinthians Paulista, responsável pela parte de Design do projeto QR Security. Tem como objetivo 
             principal passar no vestibular da UNESP e se formar em alguma medicina.</p>
           </div>
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Gui.jpg" alt="Guilherme Oliveira" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Guilherme Lombardi</h3>
             <p class="text-justify" style="font-size:17px; text-shadow: 2px 2px #000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
           </div>
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Manera.jpg" alt="Lucas Manera" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Lucas Manera</h3>
@@ -63,7 +63,7 @@
             Clube Corinthians Paulista, responsável pela parte de Design do projeto QR Security. Tem como objetivo 
             principal passar no vestibular da UNESP e se formar em Designer Gráfico.</p>
           </div>
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Sasa.jpg" alt="Lucas Sartorelli" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Lucas Sartorelli</h3>
@@ -71,7 +71,7 @@
           </div>
           </div>
           <div class="col-md-12">
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Matheus.jpg" alt="Matheus Oliveira" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Matheus Oliveira</h3>
@@ -80,7 +80,7 @@
             neste ano os estudos em Laravel e procura se aprofundar ainda mais no assunto, com alguns projetos extras, pretende 
             expandir seu conhecimento afim de se preparar melhor para os desafios do Programador Web.</p>
           </div>
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Max.jpg" alt="Maxwell Arruda" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Maxwell Arruda</h3>
@@ -89,7 +89,7 @@
             neste ano os estudos em Laravel, mas ainda está indeciso em qual faculdade fazer. Obs.: Já foi estagiário na escola.
             E pretende expandir seu currículo em outros estágios.</p>
           </div>
-          <div class="col-md-3 well2" style="border: 1px solid #000">
+          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Wil.jpg" alt="Wilgner Delfino" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Wilgner Delfino</h3>

@@ -27,7 +27,7 @@
           <h4>RM:</h4>
           <input type="number" class="form-control" id="aluno2" name="aluno_id" maxlength="5" value="">
           <h4>Selecionar ocorrência:</h4>
-          <select name="ocorrencia2" class="form-control select2-multi" id="ocorrencia">
+          <select name="ocorrencia2" class="form-control select2-multi" id="ocorrencia2">
              @foreach($ocorrencias as $ocorrencia)
                <option value="{{$ocorrencia->id}}">{{$ocorrencia->nome}}</option>
              @endforeach

@@ -6,7 +6,7 @@
   <div class="container jumbotron">
     <h1 class="text-center animated slideInLeft" style="text-shadow: 2px 2px #000;">Seja Bem Vindo ao QR Security</h1>
     <hr>
-    <h4 class="text-center animated slideInRight" style="font-size:26px;text-shadow: 2px 2px #000;">O Sistema de Gerenciamento de Alunos mais bonito que você vai ver hoje! rsrs</h4>
+    <h4 class="text-center animated slideInRight" style="font-size:26px;text-shadow: 2px 2px #000;">Sistema de Gerenciamento de Alunos.</h4>
   </div>
   <div class="col-md-6 card card-5 animated slideInLeft">
     <h1 class="animated slideInLeft" style="color: #fff;">O Que é o QR Security?</h1>

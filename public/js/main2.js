@@ -195,7 +195,7 @@ var siteUrl = new Date();
   siteUrl = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto + ':' + segundo
 
   var aluno = $("#aluno2").val();
-  var ocorrencia = $("#ocorrencia").val();
+  var ocorrencia = $("#ocorrencia2").val();
   var tipo = $('#tipo').val();
   var x = '';
 

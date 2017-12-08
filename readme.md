@@ -38,3 +38,39 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Test the software
+
+<h1> TCC QR Security </h1>
+
+<strong>Grupo:</strong> <br />
+<ul>
+  <li>Caio Gianotto de Melo</li>
+  <li>Guilherme Oliveira Lombardi</li>
+  <li>Lucas Eduardo Manera</li>
+  <li>Lucas Sartorelli Leinatti</li>
+  <li>Matheus Luiz de Oliveira</li>
+  <li>Maxwell Arruda</li>
+  <li>Wilgner Ferreira Delfino</li>
+</ul>
+
+<ul>
+  <li>Colocar o comando composer dump-autoload</li>
+  <li>Colocar o comando composer install,se der erro, rodar composer update</li>
+  <li>Na hora da migration, rodar o comando php artisan migrate --seed</li>
+  <li><h3>Administrador:</h3></li>
+  <li>Login: admin@admin.com</li>
+  <li>Senha: 123123</li>
+  <li><h3>Usuário:</h3></li>
+  <li>Login: binho@binho.com</li>
+  <li>Senha: 123123</li>
+  <li><h3>Passos:</h3></li>
+  <li>Entre como admin e cadastre um aluno primeiramente;</li>
+  <li>No menu checar entrada, dê presença a ele;</li>
+  <li>Todas as salas já foram cadastradas;</li>
+  <li>Se quiser cadastrar mais salas, utilize o phpmyAdmin.(localhost/phpmyadmin)</li>
+  <li><h3>Observações:</h3></li>
+  <li>Em caso de problemas com o login, apague no navegador os cookies gerados pelo laravel(token e session), e o site voltará ao normal;</li>
+  <li>Para testes, necessário WebCam e um código QR que remete ao RM do aluno cadastrado;</li>
+  <li>Para obter o QR Code acesse http://br.qr-code-generator.com/ e crie um QR do tipo texto com o valor remetente ao RM do aluno cadastrado.</li>
+</ul>

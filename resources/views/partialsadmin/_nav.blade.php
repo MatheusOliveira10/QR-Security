@@ -28,7 +28,8 @@
         <ul class="dropdown-menu">
           <li class="{{ Request::is('alunos/create') ? "active" : "" }}"><a href="/alunos/create"><i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>&nbsp;Cadastrar Aluno</a></li>
           <li class="{{ Request::is('register') ? "active" : "" }}"><a href="{{ route('register')}}"><i class="fa fa-btn fa-user fa-fw"></i>&nbsp;Registrar Usuário</a></li>
-        </ul>
+          <li class="{{ Request::is('admins.create') ? "active" : "" }}"><a href="{{ route('register')}}"><i class="fa fa-btn fa-lock fa-fw"></i>&nbsp;Registrar Administrador</a>
+      </ul>
         <li class="{{ Request::is('alunos') ? "active" : "" }}"><a href="/alunos">Lista de Alunos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

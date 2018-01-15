@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="https://github.com/MLuiz1992/QR-Security/blob/master/public/images/LogoDefinitivoQR.png?raw=true"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -45,13 +45,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 <strong>Grupo:</strong> <br />
 <ul>
-  <li>Caio Gianotto de Melo</li>
-  <li>Guilherme Oliveira Lombardi</li>
   <li>Lucas Eduardo Manera</li>
   <li>Lucas Sartorelli Leinatti</li>
   <li>Matheus Luiz de Oliveira</li>
   <li>Maxwell Arruda</li>
-  <li>Wilgner Ferreira Delfino</li>
 </ul>
 
 <ul>

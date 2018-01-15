@@ -28,6 +28,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/alunos/chamada', 'AlunoController@chamadapagina')->name('alunos.chamadapagina');
 Route::put('/alunos/{id}', ['uses' => 'AlunoController@chamada', 'as' =>'alunos.chamada']);
+Route::get('/admin/create', ['uses' => 'RegisterControllerAdmin@showRegistrationForm']);
+Route::post('/admin/store', ['uses' => 'RegisterControllerAdmin@register'])->name('admins.store');
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');

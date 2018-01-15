@@ -40,21 +40,6 @@
         <p class="text-center" style="font-size:24px; text-shadow: 2px 2px #000;">Desenvolvedores:</p>
         <br />
           <div class="col-md-3 well2">
-            <img src="../images/desenvolvedores/Caio.jpg" alt="Caio Melo" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
-            <br />
-            <h3 class="text-center" style="text-shadow: 2px 2px #000;">Caio Melo</h3>
-            <p class="text-justify" style="font-size:17px; text-shadow: 2px 2px #000;">Nascido na cidade de Mogi Mirim-SP, tem 17 anos, está cursando o último ano 
-            do curso técnico de Informática para Internet da ETEC Pedro Ferreira Alves. Torce para o Sport 
-            Clube Corinthians Paulista, responsável pela parte de Design do projeto QR Security. Tem como objetivo 
-            principal passar no vestibular da UNESP e se formar em alguma medicina.</p>
-          </div>
-          <div class="col-md-3 well2">
-            <img src="../images/desenvolvedores/Gui.jpg" alt="Guilherme Oliveira" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
-            <br />
-            <h3 class="text-center" style="text-shadow: 2px 2px #000;">Guilherme Lombardi</h3>
-            <p class="text-justify" style="font-size:17px; text-shadow: 2px 2px #000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
-          </div>
-          <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Manera.jpg" alt="Lucas Manera" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Lucas Manera</h3>
@@ -69,8 +54,6 @@
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Lucas Sartorelli</h3>
             <p class="text-justify" style="font-size:17px;text-shadow: 2px 2px #000;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis.</p>
           </div>
-          </div>
-          <div class="col-md-12">
           <div class="col-md-3 well2">
             <img src="../images/desenvolvedores/Matheus.jpg" alt="Matheus Oliveira" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
             <br />
@@ -88,13 +71,6 @@
             ano do curso técnico de Informática para a Internet na ETEC Pedro Ferreira Alves, torce para o São Paulo Futebol Clube. Iniciou
             neste ano os estudos em Laravel, mas ainda está indeciso em qual faculdade fazer. Obs.: Já foi estagiário na escola.
             E pretende expandir seu currículo em outros estágios.</p>
-          </div>
-          <div class="col-md-3 well2">
-            <img src="../images/desenvolvedores/Wil.jpg" alt="Wilgner Delfino" height="70%" width="70%" style="border-radius: 250px; margin-left: 40px;">
-            <br />
-            <h3 class="text-center" style="text-shadow: 2px 2px #000;">Wilgner Delfino</h3>
-            <p class="text-justify" style="font-size:17px; text-shadow: 2px 2px #000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus dolor ac orci rutrum, et gravida urna pretium. Duis sagittis dolor quam, non varius massa consectetur et. Cras sit amet lorem nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non massa ante. Aliquam tempor elit a dictum facilisis. Aliquam tempor elit a dictum facilisis. Palmeras eh grande.</p>
-          </div>
           </div>
 @endsection
 

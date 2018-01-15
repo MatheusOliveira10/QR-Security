@@ -1,69 +1,35 @@
-<p align="center"><img src="https://github.com/MLuiz1992/QR-Security/blob/master/public/images/LogoDefinitivoQR.png?raw=true"></p>
+<p align="center"><h1>QR Security</h1><img src="https://github.com/MLuiz1992/QR-Security/blob/master/public/images/LogoDefinitivoQR.png?raw=true"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Sobre o Projeto
 
-## About Laravel
+O QR Security é um projeto de conclusão de curso (TCC), feito durante o ano de 2017 na ETEC Pedro Ferreira Alves no curso de Ensino Médio Integrado a Informática para Internet. Trata-se de um sistema para controle de fluxo de alunos na escola por meio de códigos QR (Quick Response Code), que estarão nas carteirinhas dos alunos possibilitando também que seus responsáveis tenham ciência da frequência do aluno. O objetivo é propiciar melhor relação entre pais e escola, além de melhorar os meios de combate a evasão escolar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-
-## Test the software
-
-<h1> TCC QR Security </h1>
-
-<strong>Grupo:</strong> <br />
+## Para Testar o sistema (Localmente)
+<h3>Softwares Necessários</h3>
 <ul>
-  <li>Lucas Eduardo Manera</li>
-  <li>Lucas Sartorelli Leinatti</li>
-  <li>Matheus Luiz de Oliveira</li>
-  <li>Maxwell Arruda</li>
+  <li>Composer</li>
+  <li>XAMPP/WAMP</li>
+  <li>Laravel</li>
 </ul>
 
+<h3>Passos:</h3>
 <ul>
-  <li>Colocar o comando composer dump-autoload</li>
-  <li>Colocar o comando composer install,se der erro, rodar composer update</li>
-  <li>Na hora da migration, rodar o comando php artisan migrate --seed</li>
-  <li><h3>Administrador:</h3></li>
+  <li>Na raiz do projeto há um arquivo chamado .env, entre nele e configure o banco de dados, com o nome do banco vazio criado, o nome de usuário e senha para acesso aos BDs</li>
+  <li>Abra o terminal de comando(cmd)</li>
+  <li>Entre na pasta do projeto</li>
+  <li>Rodar os seguintes comandos</li>
+  <li>composer install (em caso de erro, rode o comando composer update)</li>
+  <li>php artisan key:generate</li>
+  <li>php artisan migrate --seed</li>
+  <li>Um usuário administrador e um usuário normal já estão cadastrados previamente no sistema</li>
+  <li><h3>Administrador</h3></li>
   <li>Login: admin@admin.com</li>
   <li>Senha: 123123</li>
-  <li><h3>Usuário:</h3></li>
-  <li>Login: binho@binho.com</li>
+  <li><h3>Usuário</h3></li>
+  <li>Login: pai@pai.com</li>
   <li>Senha: 123123</li>
-  <li><h3>Passos:</h3></li>
-  <li>Entre como admin e cadastre um aluno primeiramente;</li>
-  <li>No menu checar entrada, dê presença a ele;</li>
+  <li>Entre como administrador e cadastre um aluno primeiramente;</li>
+  <li>Na página checar entrada, dê presença a ele;</li>
   <li>Todas as salas já foram cadastradas;</li>
   <li>Se quiser cadastrar mais salas, utilize o phpmyAdmin.(localhost/phpmyadmin)</li>
   <li><h3>Observações:</h3></li>

@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(OcorrenciasTableSeeder::class);
         
         DB::table('users')->insert([
-            'name' => 'Binho',
-            'email' => 'binho@binho.com',
+            'name' => 'Pai',
+            'email' => 'pai@pai.com',
             'password' => Hash::make('123123'),
         ]);
 

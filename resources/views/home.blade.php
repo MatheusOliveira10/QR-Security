@@ -60,7 +60,7 @@
             <h3 class="text-center" style="text-shadow: 2px 2px #000;">Matheus Oliveira</h3>
             <p class="text-justify" style="font-size:17px; text-shadow: 2px 2px #000;">Nascido na cidade de Conchal-SP, tem 17 anos e está cursando o último
             ano do curso técnico de Informática para a Internet na ETEC Pedro Ferreira Alves, torce para o São Paulo Futebol Clube. Iniciou
-            neste ano os estudos em Laravel e procura se aprofundar ainda mais no assunto, com alguns projetos extras, pretende 
+            no ano passado os estudos em Laravel e procura se aprofundar ainda mais no assunto, com alguns projetos extras, pretende 
             expandir seu conhecimento afim de se preparar melhor para os desafios do Programador Web.</p>
           </div>
           <div class="col-md-3 well2">

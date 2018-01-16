@@ -39,18 +39,13 @@
             events={!! json_encode($events)  !!};
             events2={!! json_encode($events2)  !!};
             $('#calendar').fullCalendar({
-                // put your options and callbacks here
                 defaultView: 'listWeek',
                 lang: 'pt-br',
                 eventSources:[
                     events,
                     events2
                 ],
-
-
-
             })
-
         });
     </script>
 

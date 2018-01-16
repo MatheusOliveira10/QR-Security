@@ -78,6 +78,18 @@ Route::prefix('saida')->group(function() {
     Route::get('/create', 'SaidaController@create')->name('saida.create')->middleware('auth:admin');
 });
 
+Route::prefix('cardapio')->group(function() {
+    Route::get('/', ['uses' => 'FoodController@index', 'as' => 'food.index'])->middleware('auth:admin');
+    Route::post('/', ['uses' => 'FoodController@store', 'as' => 'food.store'])->middleware('auth:admin');
+    Route::get('/{id}/edit', ['uses' => 'FoodController@edit', 'as' => 'food.edit']);
+    Route::put('/{id}', ['uses' => 'FoodController@update', 'as' => 'food.update']);
+    Route::delete('/{id}', ['uses' => 'FoodController@destroy', 'as' => 'food.destroy']);
+    Route::get('/{id}', ['uses' => 'FoodController@show', 'as' => 'food.show'])->middleware('auth');
+    Route::get('/fetch/{id}', ['uses' => 'FoodController@fetch', 'as' => 'food.fetch']);
+    Route::post('/post', ['uses' => 'FoodController@post', 'as' => 'food.post']);
+    Route::get('/create', 'FoodController@create')->name('food.create')->middleware('auth:admin');
+});
+
 Route::get('perfil', 'UserController@perfil');
 Route::post('perfil', 'UserController@avatar');
 

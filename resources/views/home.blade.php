@@ -72,8 +72,5 @@
             neste ano os estudos em Laravel, mas ainda está indeciso em qual faculdade fazer. Obs.: Já foi estagiário na escola.
             E pretende expandir seu currículo em outros estágios.</p>
           </div>
+       </div>   
 @endsection
-
-
-  
-     
